@@ -262,8 +262,8 @@ footer a {
 }
 </style>
 
-  <h2>Weekly Coding Challenge #1: Sign in/up Form</h2>
-<div class="container" id="container">
+  <h2> </h2>
+<div style="    margin-top: 87px;" class="container" id="container" #myli>
 	<div class="form-container sign-up-container">
 		<form action="#">
 			<h1>Create Account</h1>
@@ -276,7 +276,7 @@ footer a {
 			<input type="text" placeholder="Name" />
 			<input type="email" placeholder="Email" />
 			<input type="password" placeholder="Password" />
-			<button>Sign Up</button>
+			<button (click)="myli.classList.add('right-panel-active');">Sign Up</button>
 		</form>
 	</div>
 	<div class="form-container sign-in-container">
@@ -291,7 +291,7 @@ footer a {
 			<input type="email" placeholder="Email" />
 			<input type="password" placeholder="Password" />
 			<a href="#">Forgot your password?</a>
-			<button>Sign In</button>
+			<button (click)="myli.classList.remove('right-panel-active');">Sign In</button>
 		</form>
 	</div>
 	<div class="overlay-container">

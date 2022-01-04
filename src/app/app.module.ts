@@ -20,6 +20,7 @@ import { FeedvideosComponent } from './components/views/feedvideos/feedvideos.co
 import { ProfilepublicComponent } from './components/views/profilepublic/profilepublic.component';
 import { ProfilesettingComponent } from './components/views/profilesetting/profilesetting.component';
 import { UsersidemenuComponent } from './components/views/usersidemenu/usersidemenu.component';
+import { IndexComponent } from './components/views/index/index.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { UsersidemenuComponent } from './components/views/usersidemenu/usersidem
     FeedvideosComponent,
     ProfilepublicComponent,
     ProfilesettingComponent,
-    UsersidemenuComponent
+    UsersidemenuComponent,
+    IndexComponent
   ],
   imports: [
     BrowserModule,
