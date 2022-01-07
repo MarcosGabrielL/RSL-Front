@@ -2,6 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { LoginService } from '../login.service';
 import { RegisterService } from '../register.service';
+import {
+  getSupportedInputTypes,
+  Platform,
+  supportsPassiveEventListeners,
+  supportsScrollBehavior,
+} from '@angular/cdk/platform';
 
 @Component({
   selector: 'app-login',
@@ -40,15 +46,28 @@ export class LoginComponent implements OnInit {
     "password":"pass"
   };
 
+    supportedInputTypes = Array.from(getSupportedInputTypes()).join(', ');
+  supportsPassiveEventListeners = supportsPassiveEventListeners();
+  supportsScrollBehavior = supportsScrollBehavior();
+
+    isMobile = false;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private authenticationService: LoginService,
-    private registerService: RegisterService) {   }
+    private registerService: RegisterService,
+    public platform: Platform) {   }
 
 
   ngOnInit(): void {
+    if (this.platform.IOS) {
+      this.isMobile = true;
+    }else{
+      if (this.platform.ANDROID) {
+      this.isMobile = true;
+        }  
+    }
   }
     
     handleLogin() {

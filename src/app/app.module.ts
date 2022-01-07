@@ -15,6 +15,7 @@ import { MatInputModule } from "@angular/material/input";
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {PlatformModule} from '@angular/cdk/platform';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -79,7 +80,8 @@ import { GridlistComponent } from './components/views/gridlist/gridlist.componen
     ReactiveFormsModule,
     MatSnackBarModule,
     BrowserAnimationsModule,
-    MatGridListModule
+    MatGridListModule,
+    PlatformModule
   ],
   providers: [
         {
