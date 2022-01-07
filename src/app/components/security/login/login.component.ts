@@ -101,28 +101,29 @@ export class LoginComponent implements OnInit {
      };
     
     this.authRequestreg={
-    "email":this.email,
-    "password":this.password
+    "email":this.emailreg,
+    "password":this.passwordreg
     };
        // console.log(this.authRequestRegister);
     this.registerService.registration(this.authRequestRegister).subscribe((result)=> {
-        this.successMessage = 'Register Successful.';
+        this.successMessage = 'Cadastro com sucesso';
         this.authenticationService.mensagem(this.successMessage); 
             this.authenticationService.authenticationService(this.authRequestreg).subscribe((result)=> {
                 this.invalidLogin = false;
                 this.loginSuccess = true;
                 this.authenticationService.createBasicAuthToken(this.emailreg, this.passwordreg);
                 this.authenticationService.registerSuccessfulLogin(this.emailreg, this.passwordreg);
-                this.successMessage = 'Login Successful.';
+                this.successMessage = 'Login com sucesso';
                 this.authenticationService.mensagem(this.successMessage);
                 this.router.navigate(['/index']);
               }, () => {
                 this.invalidLogin = true;
                 this.loginSuccess = false;
                 this.authenticationService.mensagem(this.errorMessage);
+                this.router.navigate(['/index']);
               });
     }, () => {
-	this.errorMessage = 'Error Registration';
+	this.errorMessage = 'Erro no cadastro';
         this.authenticationService.mensagem(this.errorMessage);
         
      }); 

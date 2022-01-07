@@ -294,7 +294,7 @@ body {
     display: block;
     font-size: 9vw;
     margin-block-start: 3vw;
-    margin-block-end: 1vw;
+    margin-block-end: 3vw;
 }
 
 .div-only-mobile p {
@@ -361,16 +361,15 @@ body {
 background-color: #eee;
     border: none;
     padding: 1vw 1vw;
-    margin-top: 5vw ;
+    margin-top: 3vw ;
     height: 9%;
     width: 100%;
-    font-size: 5vw;
+    font-size: 6vw;
 }
 
 .div-only-mobile .container {
 	background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 14px 28px rgb(0 0 0 / 25%), 0 10px 10px rgb(0 0 0 / 22%);
     position: relative;
     overflow: hidden;
     width: 80%;
@@ -580,7 +579,7 @@ background-color: #eee;
 	</div>
 </div>
   
-  <div *ngIf="isMobile" style="margin-top: 94px;">
+  <div *ngIf="isMobile" style="margin-top: 100px;">
 	<div class="container div-only-mobile" id="container">
 	<div #signup id="signup" class="form-container sign-up-container">
 		<form action="#">
@@ -593,7 +592,7 @@ background-color: #eee;
               name="emailreg"  placeholder="Email"/>
 			<input type="Password" [(ngModel)]="passwordreg" id="passwordreg" placeholder="Enter password"
               name="password" />
-			<button (click)="handleRegistration();" >Cadastrar</button>
+			<button style="margin-top: 3vw;" (click)="handleRegistration();" >Cadastrar</button>
 			<span>Já tem uma conta? <a (click)="signup.classList.remove('zidex');" style="color: #FF416C;">Entre agora</a></span>
 		</form>
 	</div>
