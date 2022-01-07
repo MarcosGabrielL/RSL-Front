@@ -383,7 +383,7 @@
 	color:#fff;
 }
 .header.shop{
-	background:#fff;
+	background: transparent;
 }
 .header.shop .nav-inner {
 	margin: 0;
@@ -519,14 +519,14 @@
 }
 .header.shop .middle-inner {
 	padding: 10px 0;
-	background: #fff;
+	background: transparent;
 	/*border-top: 1px solid #eee;*/
 }
 .header.shop.v3 .middle-inner {
 	border:none;
 }
 .header.shop .header-inner {
-	background: #fff;
+	background: transparent;
 }
 .header.shop.v3 .header-inner {
 	background: transparent;
@@ -800,11 +800,13 @@
 }
 .header.shop .right-bar {
 	display: inline-block;
-	padding: 0;
-	margin: 0;
-	top: 20px;
-	float: right;
-	position: relative;
+    padding: 0;
+    margin: 0;
+    /* top: 20px; */
+    /* float: right; */
+    position: absolute;
+    top: 2%;
+    right: 20%;
 }
 .header.shop .right-bar .sinlge-bar.top-search a {
 	transform: translateY(3px);
@@ -813,7 +815,7 @@
 	color:#ffffff;
 }
 .header.shop .right-bar .sinlge-bar .single-icon{
-	color:#333;
+	color:#fff;
 	font-size:25px;
 	position:relative;
 }
@@ -998,85 +1000,29 @@
 	<!-- Fancybox -->
 
 
+        
+        <div class="logo">
+	<a href="index.html"><img style="height: 39px; position: absolute; left: 20%; top: 2%;
+" src="https://i.ibb.co/YjcXKnQ/Untitled-1.png" alt="logo"></a>
+						</div>
+        
 	<!-- Header -->
 	<header class="header shop">
 		
 		<div class="middle-inner" id="middle">
-			<div class="container">
 				<div class="row">
-					<div class="col-lg-2 col-md-2 col-12">
-						<!-- Logo -->
-						<div class="logo">
-							<a href="index.html"><img style="    height: 39px;
-    max-width: 100%;
-    margin-top: -19px;
-    margin-left: 50px;
-" src="https://i.ibb.co/YjcXKnQ/Untitled-1.png" alt="logo"></a>
-						</div>
-						<!--/ End Logo -->
-						<!-- Search Form -->
-						<div class="search-top">
-							<div class="top-search"><a href="#0"><i class="fa fa-phone"></i></a></div>
-							<!-- Search Form -->
-							<div class="search-top">
-								<form class="search-form">
-									<input type="text" placeholder="Search here..." name="search">
-									<button value="search" type="submit"><i class="fa fa-search"></i></button>
-								</form>
-							</div>
-							<!--/ End Search Form -->
-						</div>
-						<!--/ End Search Form -->
-						<div class="mobile-nav"></div>
-					</div>
-					
-					<div class="col-lg-2 col-md-3 col-12" style="   position: absolute;
-    right: 9%;
-    top: -1%;">
+					<div class="" >
 						<div class="right-bar">
 							<!-- Search Form -->
-							<div class="sinlge-bar">
-								<a href="#" class="single-icon"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-							</div>
-							<div class="sinlge-bar">
-								<a href="#" class="single-icon"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
-							</div>
+							
 							<div class="sinlge-bar shopping">
 								<a href="#" class="single-icon"><i class="fa fa-shopping-cart"></i> <span class="total-count">2</span></a>
-								<!-- Shopping Item -->
-								<div class="shopping-item">
-									<div class="dropdown-cart-header">
-										<span>2 Items</span>
-										<a href="#">View Cart</a>
-									</div>
-									<ul class="shopping-list">
-										<li>
-											<a href="#" class="remove" title="Remove this item"><i class="fa fa-remove"></i></a>
-											<a class="cart-img" href="#"><img src="https://via.placeholder.com/70x70" alt="#"></a>
-											<h4><a href="#">Woman Ring</a></h4>
-											<p class="quantity">1x - <span class="amount">$99.00</span></p>
-										</li>
-										<li>
-											<a href="#" class="remove" title="Remove this item"><i class="fa fa-remove"></i></a>
-											<a class="cart-img" href="#"><img src="https://via.placeholder.com/70x70" alt="#"></a>
-											<h4><a href="#">Woman Necklace</a></h4>
-											<p class="quantity">1x - <span class="amount">$35.00</span></p>
-										</li>
-									</ul>
-									<div class="bottom">
-										<div class="total">
-											<span>Total</span>
-											<span class="total-amount">$134.00</span>
-										</div>
-										<a href="checkout.html" class="btn animate">Checkout</a>
-									</div>
-								</div>
+								
 								<!--/ End Shopping Item -->
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
 		</div>
 		<!-- Header Inner -->
 		

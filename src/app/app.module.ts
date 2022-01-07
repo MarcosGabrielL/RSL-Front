@@ -1,5 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
+
+
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatCardModule} from '@angular/material/card';
+import {MatTableModule} from '@angular/material/table';
+import {MatButtonModule} from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { MatInputModule } from "@angular/material/input";
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +35,7 @@ import { ProfilepublicComponent } from './components/views/profilepublic/profile
 import { ProfilesettingComponent } from './components/views/profilesetting/profilesetting.component';
 import { UsersidemenuComponent } from './components/views/usersidemenu/usersidemenu.component';
 import { IndexComponent } from './components/views/index/index.component';
+import { HttpInterceptorService } from './components/security/httpinterceptor.service';
 
 @NgModule({
   declarations: [
@@ -46,9 +61,29 @@ import { IndexComponent } from './components/views/index/index.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatSidenavModule,
+    BrowserAnimationsModule,
+    MatListModule,
+    MatMenuModule,
+    MatCardModule,
+    MatTableModule,
+    HttpClientModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatSnackBarModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+        {
+          provide: HTTP_INTERCEPTORS,
+          useClass: HttpInterceptorService,
+          multi: true
+        }
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
