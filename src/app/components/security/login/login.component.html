@@ -6,7 +6,7 @@
 }
 
 body {
-	background: #f6f5f7;
+	background: #fff;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -279,7 +279,7 @@ footer a {
 }
 
 body {
-	background: #f6f5f7;
+	background: #fff;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -293,8 +293,8 @@ body {
     margin: 0;
     display: block;
     font-size: 9vw;
-    margin-block-start: 0;
-    margin-block-end: 6vw;
+    margin-block-start: 3vw;
+    margin-block-end: 1vw;
 }
 
 .div-only-mobile p {
@@ -302,7 +302,7 @@ body {
 	font-weight: 100;
 	line-height: 20px;
 	letter-spacing: 0.5px;
-	margin: 20px 0 30px;
+	margin: 2vw 0 3vw;
 }
 
 .div-only-mobile span {
@@ -315,6 +315,7 @@ body {
 	color: #333;
     font-size: 4vw;
     text-decoration: none;
+    margin-top: 1vw;
     margin-bottom: 21%;
 }
 
@@ -360,7 +361,7 @@ body {
 background-color: #eee;
     border: none;
     padding: 1vw 1vw;
-    margin: 5vw 0;
+    margin-top: 5vw ;
     height: 9%;
     width: 100%;
     font-size: 5vw;
@@ -374,7 +375,7 @@ background-color: #eee;
     overflow: hidden;
     width: 80%;
     max-width: 100%;
-    min-height: 54%;
+    min-height: 60%;
 }
 
 .div-only-mobile .form-container {
@@ -521,7 +522,7 @@ background-color: #eee;
 
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'>
   
-<video id="background-video" autoplay loop muted poster="https://i.postimg.cc/wMCbLjT7/Screenshot-5.png">
+<video *ngIf="!isMobile" id="background-video" autoplay loop muted poster="https://i.postimg.cc/wMCbLjT7/Screenshot-5.png">
   <source src="https://streamable.com/yxcboq" type="video/mp4">
 </video>
 
@@ -593,7 +594,7 @@ background-color: #eee;
 			<input type="Password" [(ngModel)]="passwordreg" id="passwordreg" placeholder="Enter password"
               name="password" />
 			<button (click)="handleRegistration();" >Cadastrar</button>
-			<span>Já tem uma conta? <a (click)="signup.classList.remove('zidex');" href="#" style="color: #FF416C;">Entre agora</a></span>
+			<span>Já tem uma conta? <a (click)="signup.classList.remove('zidex');" style="color: #FF416C;">Entre agora</a></span>
 		</form>
 	</div>
 	<div class="form-container sign-in-container">
@@ -605,7 +606,7 @@ background-color: #eee;
               name="password" />
 			<a href="#">Esqueceu sua senha?</a>
 			<button  (click)=handleLogin() >Entrar</button>
-			<span>Não tem uma conta? <a (click)="signup.classList.add('zidex');"  href="#" style="color: #FF416C;">Cadastre-se</a></span>
+			<span>Não tem uma conta? <a (click)="signup.classList.add('zidex');"  style="color: #FF416C;">Cadastre-se</a></span>
 		</form>
 	</div>
 	
