@@ -292,9 +292,9 @@ body {
    font-weight: bold;
     margin: 0;
     display: block;
-    font-size: 5em;
+    font-size: 9vw;
     margin-block-start: 0;
-    margin-block-end: 1.27em;
+    margin-block-end: 6vw;
 }
 
 .div-only-mobile p {
@@ -306,26 +306,26 @@ body {
 }
 
 .div-only-mobile span {
-	font-size: 34px;
+	font-size: 4vw;
     text-decoration: none;
-    margin-top: 50px;
+    margin-top: 4vw;
 }
 
 .div-only-mobile a {
 	color: #333;
-    font-size: 41px;
+    font-size: 4vw;
     text-decoration: none;
-    margin-bottom: 25%;
+    margin-bottom: 21%;
 }
 
 .div-only-mobile button {
-	border-radius: 15px;
+	border-radius: 1vw;
     border: 1px solid #FF4B2B;
     background-color: #FF4B2B;
     color: #FFFFFF;
-    font-size: 40px;
+    font-size: 4vw;
     font-weight: bold;
-    padding: 35px 97px;
+    padding: 4vw 9vw;
     letter-spacing: 1px;
     text-transform: uppercase;
     transition: transform 80ms ease-in;
@@ -357,13 +357,13 @@ body {
 }
 
 .div-only-mobile input {
-	    background-color: #eee;
+background-color: #eee;
     border: none;
-    padding: 12px 15px;
-    margin: 31px 0;
-    height: 8%;
+    padding: 1vw 1vw;
+    margin: 5vw 0;
+    height: 9%;
     width: 100%;
-    font-size: 53px;
+    font-size: 5vw;
 }
 
 .div-only-mobile .container {
@@ -579,7 +579,7 @@ body {
 	</div>
 </div>
   
-  <div *ngIf="isMobile">
+  <div *ngIf="isMobile" style="margin-top: 94px;">
 	<div class="container div-only-mobile" id="container">
 	<div #signup id="signup" class="form-container sign-up-container">
 		<form action="#">
@@ -612,6 +612,7 @@ body {
 	<!--  action z-index: 3; para aparecer singUP  -->
         
 </div>
+  </div>
      
 
  
