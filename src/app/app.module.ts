@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatInputModule } from "@angular/material/input";
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,6 +37,7 @@ import { ProfilesettingComponent } from './components/views/profilesetting/profi
 import { UsersidemenuComponent } from './components/views/usersidemenu/usersidemenu.component';
 import { IndexComponent } from './components/views/index/index.component';
 import { HttpInterceptorService } from './components/security/httpinterceptor.service';
+import { GridlistComponent } from './components/views/gridlist/gridlist.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,8 @@ import { HttpInterceptorService } from './components/security/httpinterceptor.se
     ProfilepublicComponent,
     ProfilesettingComponent,
     UsersidemenuComponent,
-    IndexComponent
+    IndexComponent,
+    GridlistComponent
   ],
   imports: [
     BrowserModule,
@@ -75,7 +78,8 @@ import { HttpInterceptorService } from './components/security/httpinterceptor.se
     MatInputModule,
     ReactiveFormsModule,
     MatSnackBarModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatGridListModule
   ],
   providers: [
         {
