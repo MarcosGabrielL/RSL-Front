@@ -1,17 +1,896 @@
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.1/tailwind.min.css'>
+ 
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+    
+  <link rel='stylesheet' href='https://dsgov.estaleiro.serpro.gov.br/assets/design-system/dist/dsgov.css'>
+<link rel='stylesheet' href='https://cdn.dsgovserprodesign.estaleiro.serpro.gov.br/design-system/fonts/rawline/css/rawline.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css'>
+
+
 <style>
-    .mat-drawer-container {
-    background-color: #f3f6f8;
+body {
+  background: rgb(244,244,244) ;
+  margin: 0;
+  font-family: "Open Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
+  padding-left: 64px;
+}
+html{
+  background: rgb(244,244,244);
+}
+header{margin-bottom: 1.7%;
+    margin-right: 2%;
+    border-radius: 0px 5px 5px 0px;
     }
-    .example-container {
-    background-color: #f3f6f8;
+main {
+  height: 100%;
+    width: 100%;
+}
+main .helper {
+ background: #fff;
+    position: relative;
+    top: 0%;
+    left: 0%;
+    width: 73%;
+    height: 100vh;
+    text-align: center;
+    border-radius: 0px 5px 5px 0px;
+    font-size: 2em;
+    font-weight: bold;
+    z-index: 4;
+    display: inline-block;
+}
+main .helper span {
+  color: rgba(0, 0, 0, 0.2);
+  font-size: 0.4em;
+  display: block;
+}
+.menu {
+  background: rgba(243,244,246);
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  outline: none;
+    width: 64px;
+}
+.menu-right {
+ background: rgba(255,255,255);
+    height: 100%;
+    position: relative;
+    /* top: 142px; */
+    float: right;
+    margin-right: 2%;
+    right: 0;
+    z-index: 5;
+    outline: none;
+    width: 23%;
+    box-shadow: -10px -10px 9px -10px #ddd;
+    border-radius: 5px;
+}
+.menu .avatar {
+     background-color: #383a45;
+    background-image: linear-gradient(
+135deg, #4f5261 0%, #383a45 50%);
+    text-align: center;
+}
+.menu .avatar img {
+  width: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid ##fff;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
+}
+.menu .avatar h2 {
+  font-weight: normal;
+  margin-bottom: 0;
+}
+.menu ul {
+      list-style: none;
+    padding: 0.5em 0;
+    /* margin: 0; */
+    /* margin-top: 121px; */
+    /* margin-left: 5px; */
+    color: #383a45;
+}
+.menu ul li {
+   padding: 23px 0 40px 6px;
+    font-size: 0.70em;
+    font-weight: regular;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 22px;
+    transition: all 0.15s linear;
+    cursor: pointer;
+    display: inline-block;
+        color: #f8f9fb;
+
+}
+.menu ul li.icon-dashboard {
+  background-image: url("https://cdn-icons-png.flaticon.com/512/56/56992.png");
+}
+.menu ul li.icon-customers {
+  background-image: url("https://cdn-icons-png.flaticon.com/512/56/56986.png");
+}
+.menu ul li.icon-users {
+  background-image: url("https://cdn-icons-png.flaticon.com/512/56/56937.png");
+}
+.menu ul li.icon-settings {
+  background-image: url("https://cdn-icons-png.flaticon.com/512/56/56887.png");
+}
+.menu ul li:hover {
+  
+}
+.menu ul li:focus {
+  outline: none;
+}
+
+.br-header {
+  --header-background: var(--color-secondary-01);
+  --header-shadow: var(--surface-shadow-sm);
+  --header-padding: var(--header-padding-medium);
+  --header-padding-small: var(--spacing-scale-base);
+  --header-padding-medium: var(--spacing-scale-2x);
+  --header-padding-large: var(--spacing-scale-3x);
+  --header-logo-size: var(--header-logo-medium);
+  --header-logo-small: 16px;
+  --header-logo-medium: 24px;
+  --header-logo-large: 40px;
+  --header-sign-color: var(--color-secondary-07);
+  --header-title-size: var(--font-size-scale-base);
+  --header-title-color: var(--color-secondary-09);
+  --header-subtitle-size: var(--font-size-scale-down-01);
+  --header-subtitle-color: var(--color-secondary-07);
+  --header-logo-desktop-width: 120px;
+  --header-logo-desktop-height: 48px;
+  --header-logo-compact: 60px;
+  --header-logo-compact-height: 32px;
+  --header-logo-mobile-width: 80px;
+  --header-logo-mobile-height: 40px;
+  --header-sticky-z-index: var(--z-index-layer-2);
+  background: var(--header-background);
+  box-shadow: var(--header-shadow);
+  padding: var(--header-padding) 0;
+  position: relative;
+}
+.br-header .header-top,
+.br-header .header-bottom {
+  display: flex;
+}
+.br-header .header-top {
+  justify-content: flex-end;
+}
+.br-header .header-bottom {
+  justify-content: space-between;
+  margin-top: var(--header-padding-small);
+}
+@media (min-width: 576px) {
+  .br-header {
+    --header-padding: var(--header-padding-medium);
+  }
+}
+.br-header.small {
+  --header-padding: var(--header-padding-small);
+}
+.br-header.medium {
+  --header-padding: var(--header-padding-medium);
+}
+.br-header.large {
+  --header-padding: var(--header-padding-large);
+}
+.br-header .header-logo {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  float: left;
+}
+.br-header .header-logo img {
+  margin-right: var(--spacing-scale-base);
+  max-height: var(--header-logo-size);
+}
+.br-header .header-logo .br-divider {
+  display: none;
+}
+.br-header .header-logo .header-sign {
+  color: var(--header-sign-color);
+  display: none;
+  font-weight: 500;
+  overflow: hidden;
+}
+.br-header[data-no-logo] .header-logo img {
+  display: none;
+}
+.br-header[data-no-sign] .header-logo .header-sign {
+  display: none;
+}
+@media (min-width: 576px) {
+  .br-header .header-logo {
+    --header-logo-size: var(--header-logo-large);
+    margin: 0;
+  }
+  .br-header .header-logo .br-divider {
+    display: block;
+  }
+  .br-header .header-logo .header-sign {
+    display: box;
+    display: block;
+    -webkit-line-clamp: 2;
+  }
+}
+.br-header .header-actions {
+  --focus-offset: calc(var(--spacing-scale-half) * -1);
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+}
+.br-header .header-actions .dropdown.show .br-list {
+  display: block;
+  z-index: var(--z-index-layer-1);
+}
+.br-header .header-actions .dropdown.show .br-button.active .svg-inline--fa,
+.br-header .header-actions .dropdown.show .br-button.active .fa,
+.br-header .header-actions .dropdown.show .br-button.active .fab,
+.br-header .header-actions .dropdown.show .br-button.active .fad,
+.br-header .header-actions .dropdown.show .br-button.active .fal,
+.br-header .header-actions .dropdown.show .br-button.active .far,
+.br-header .header-actions .dropdown.show .br-button.active .fas {
+  transform: rotate(180deg);
+}
+.br-header .header-actions .dropdown.show .br-notification {
+  display: block;
+  right: -16px;
+  width: 100vw;
+  z-index: var(--z-index-layer-1);
+}
+.br-header .header-actions .dropdown:not(.show) .br-notification {
+  display: none;
+}
+@media (max-width: 1279px) {
+  .br-header .header-actions .dropdown:not(.show) .br-list .{
+    display: none;
+  }
+  .menu-right{
+    display: none;
+  }
+  main .helper {
+    width: 98%;
+  }
+}
+/*MOBILE RESONSIVE*/
+@media only screen and (max-width:  480px) {
+  
+  .br-header {
+      display: none;
+      }
+  .menu {
+    display: none;
+  }
+  body{
+    padding-left: 0;
+  }
+  main .helper {
+    width: 100%;
+  }
+  main .navbar {
+     display: block;
+  }
+}
+/*MOBILE RESONSIVE*/
+.br-header .header-actions .header-links,
+.br-header .header-actions .header-functions {
+  --focus-offset: calc(var(--spacing-scale-half) * -1);
+}
+.br-header .header-actions .header-links .br-list,
+.br-header .header-actions .header-functions .br-list {
+  background: var(--header-background);
+  left: -4em;
+}
+.br-header .header-actions .header-links .br-list .br-item,
+.br-header .header-actions .header-functions .br-list .br-item {
+  white-space: nowrap;
+}
+.br-header .header-actions .header-links ul,
+.br-header .header-actions .header-functions ul {
+  display: none;
+}
+.br-header .header-actions .header-functions .br-list .br-item {
+  padding: 0;
+}
+.br-header .header-actions .header-functions .br-list .br-button {
+  --button-size: auto;
+  --button-font-size: var(--font-size-scale-base);
+  --button-font-weight: var(--item-font-weight);
+  border-radius: 0;
+  font-size: var(--font-size-scale-base);
+  font-weight: var(--item-font-weight);
+  justify-content: flex-start;
+  padding: var(--spacing-scale-base) var(--spacing-scale-2x);
+  width: 100%;
+}
+.br-header .header-actions .header-functions .br-list .br-button .text {
+  margin-left: var(--spacing-scale-2x);
+}
+.br-header .header-actions .header-functions ul {
+  display: none;
+}
+.br-header .header-actions .header-login {
+  --focus-offset: 0;
+  margin-left: var(--spacing-scale-base);
+}
+.br-header .header-actions .sign-in {
+  --button-padding: 0 var(--spacing-scale-2x);
+}
+.br-header .header-actions .avatar {
+  align-items: center;
+  display: flex;
+}
+.br-header .header-actions .avatar .br-list {
+  min-width: 200px;
+  right: 0;
+  top: 100%;
+}
+.br-header[data-no-links] .header-actions .header-links {
+  display: none;
+}
+.br-header[data-no-functions] .header-actions .header-functions {
+  display: none;
+}
+.br-header[data-no-login] .header-actions .header-login {
+  display: none;
+}
+@media (min-width: 576px) {
+  .br-header .header-actions .header-links .br-list,
+.br-header .header-actions .header-functions .br-list {
+    background: var(--header-background);
+    left: auto;
+    right: 0;
+  }
+  .br-header .header-actions .header-links .br-notification,
+.br-header .header-actions .header-functions .br-notification {
+    width: 100vw;
+  }
+}
+@media (min-width: 1280px) {
+  .br-header .header-actions .header-links [data-toggle=dropdown],
+.br-header .header-actions .header-functions [data-toggle=dropdown] {
+    display: none;
+  }
+  .br-header .header-actions .header-links .br-list,
+.br-header .header-actions .header-functions .br-list {
+    box-shadow: none;
+    display: flex;
+    position: static;
+  }
+  .br-header .header-actions .header-links .br-list .header,
+.br-header .header-actions .header-functions .br-list .header {
+    display: none;
+  }
+  .br-header .header-actions .header-links .br-list .br-item,
+.br-header .header-actions .header-functions .br-list .br-item {
+    --item-padding-x: var(--spacing-scale-base);
+    margin-right: var(--spacing-scale-base);
+  }
+  .br-header .header-actions .header-links .br-list .br-notification,
+.br-header .header-actions .header-functions .br-list .br-notification {
+    width: 50vw;
+  }
+  .br-header .header-actions .header-functions .br-list .br-button {
+    --button-size: var(--button-small);
+    border-radius: 50%;
+    justify-content: center;
+    padding: 0;
+    width: var(--button-size);
+  }
+  .br-header .header-actions .header-functions .br-list .br-button .text {
+    display: none;
+  }
+  .br-header .header-actions .header-search-trigger {
+    display: none;
+  }
+}
+.br-header .header-menu {
+  align-items: center;
+  display: flex;
+  flex: 1;
+}
+.br-header .header-menu .header-menu-trigger + .header-info {
+  margin-left: var(--spacing-scale-2x);
+}
+.br-header .header-menu .header-title {
+  color: var(--header-title-color);
+  display: box;
+  font-size: var(--header-title-size);
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.br-header .header-menu .header-subtitle {
+  color: var(--header-subtitle-color);
+  display: none;
+  font-size: var(--header-subtitle-size);
+  font-weight: 500;
+  margin-top: var(--spacing-scale-half);
+}
+.br-header[data-no-subtitle] .header-menu .header-subtitle {
+  display: none;
+}
+@media (min-width: 576px) {
+  .br-header .header-menu {
+    --header-title-size: var(--font-size-scale-up-02);
+    align-items: flex-start;
+  }
+  .br-header .header-menu .header-menu-trigger {
+    margin-top: 3px;
+  }
+  .br-header .header-menu .header-info {
+    padding-top: var(--spacing-scale-half);
+  }
+  .br-header .header-menu .header-subtitle {
+    display: block;
+  }
+}
+@media (min-width: 1280px) {
+  .br-header .header-menu {
+    --header-title-size: var(--font-size-scale-up-03);
+    --header-subtitle-size: var(--font-size-scale-base);
+  }
+  .br-header .header-menu .header-info {
+    padding-top: 0;
+  }
+}
+.br-header .header-search, .br-header.compact .header-search {
+  align-items: center;
+  background: var(--header-background);
+  bottom: 0;
+  display: none;
+  left: 0;
+  padding: 0 var(--spacing-scale-2x);
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.br-header .header-search .br-input, .br-header.compact .header-search .br-input {
+  align-items: center;
+  display: flex;
+  flex: 1;
+}
+.br-header .header-search .br-input label, .br-header.compact .header-search .br-input label {
+  display: none;
+}
+.br-header .header-search .br-input input, .br-header.compact .header-search .br-input input {
+  border-color: transparent;
+}
+.br-header .header-search .br-input input:not(:focus), .br-header.compact .header-search .br-input input:not(:focus) {
+ 
+  border-color: transparent;
+}
+.br-header .header-search .br-input .icon,
+.br-header .header-search .br-input .br-button, .br-header.compact .header-search .br-input .icon,
+.br-header.compact .header-search .br-input .br-button {
+  --focus-offset: 0;
+  bottom: auto;
+  right: 4px;
+  top: auto;
+}
+.br-header .header-search .search-close, .br-header.compact .header-search .search-close {
+  --focus-offset: calc(var(--spacing-scale-half) * -1);
+  display: none;
+}
+.br-header .header-search.active, .br-header.compact .header-search.active {
+  display: flex;
+}
+.br-header .header-search.active .search-close, .br-header.compact .header-search.active .search-close {
+  display: inline-flex;
+}
+.br-header[data-no-search] .header-search {
+  display: none;
+}
+@media (min-width: 1280px) {
+  .br-header .header-search {
+    display: flex;
+    padding: 0;
+    position: static;
+  }
+  .br-header .header-search.active .search-close {
+    display: none;
+  }
+}
+.br-header .br-input.has-icon .br-button.circle {
+  margin-top: 0;
+  position: absolute;
+  right: 4px;
+}
+.br-header.compact {
+  --header-logo-size: var(--header-logo-small);
+  --header-padding: var(--header-padding-small);
+}
+.br-header.compact .header-actions .header-search-trigger {
+  display: block;
+}
+@media (min-width: 576px) {
+  .br-header.compact .container-lg {
+    position: relative;
+  }
+  .br-header.compact .header-top {
+    display: block;
+  }
+  .br-header.compact .header-logo {
+    --header-logo-size: var(--header-logo-small);
+    float: left;
+  }
+  .br-header.compact .header-logo .br-divider {
+    display: none;
+  }
+  .br-header.compact .header-sign {
+    display: none;
+  }
+  .br-header.compact .header-actions {
+    float: right;
+    margin-top: var(--spacing-scale-2x);
+    position: relative;
+  }
+  .br-header.compact .header-bottom {
+    clear: left;
+  }
+  .br-header.compact .header-menu {
+    --header-title-size: var(--font-size-scale-up-01);
+  }
+  .br-header.compact .header-menu .header-menu-trigger {
+    margin-top: 0;
+  }
+}
+@media (min-width: 1280px) {
+  .br-header.compact .header-menu {
+    --header-title-size: var(--font-size-scale-up-02);
+  }
+}
+.br-header[data-sticky] {
+  position: sticky;
+  top: 0;
+  transition: all 150ms ease;
+  z-index: var(--header-sticky-z-index);
+}
+.br-header[data-sticky] .header-logo img,
+.br-header[data-sticky] .header-actions,
+.br-header[data-sticky] .header-menu-trigger,
+.br-header[data-sticky] .header-title {
+  transition: all 150ms ease;
+}
+.br-header[data-sticky] .header-logo img {
+  margin-right: var(--spacing-scale-base);
+}
+
+/*# sourceMappingURL=header.css.map*/
+.br-button{ color: #333 !important; }
+.br-sign-in{ color: #333 !important; }
+.v8{
+  height: 6vh;
+  width: 6vw;
+}
+.w-6 h-6{
+  height: 4vh;
+  width: 4vw;
+}
+</style>
+ <style>
+    .rotate-45 {
+        --transform-rotate: 45deg;
+        transform: rotate(45deg);
     }
+
+    .group:hover .group-hover\:flex {
+        display: flex;
+    }
+
+
 </style>
 
-<mat-drawer-container class="example-container">
-    <mat-drawer mode="side" opened>
-        <app-second></app-second>
-    </mat-drawer>
-    <mat-drawer-content class="content">
-        <app-gridlist></app-gridlist>
-    </mat-drawer-content>
-</mat-drawer-container>
+  
+  
+<header class="br-header">
+  <div class="container-lg">
+    <div class="header-top">
+      <div class="header-logo">
+      <div class=" has-icon">
+      <button class="br-button circle small" type="button" aria-label="Pesquisar"><i class="fas fa-search" aria-hidden="true"></i>
+          </button>
+          <input style="outline: none !important; width: 28vw;" id="searchbox-64881" type="text" placeholder="O que você procura?"/>
+          
+      </div>
+        </div>
+      <div class="header-actions">
+        <div class="header-links dropdown">
+          <button class="br-button circle small" type="button" data-toggle="dropdown" aria-label="Abrir Acesso Rápido"><i class="fas fa-ellipsis-v" aria-hidden="true"></i>
+          </button>
+          <div class="br-list">
+            <div class="header">
+              <div class="title">Acesso Rápido</div>
+            </div>
+          </div>
+        </div><span class="br-divider vertical mx-half mx-sm-1"></span>
+        <div class="header-functions dropdown">
+          <button class="br-button circle small" type="button" data-toggle="dropdown" aria-label="Abrir Funcionalidades do Sistema"><i class="fas fa-th" aria-hidden="true"></i>
+          </button>
+          <div class="br-list">
+            <div class="header">
+              <div class="title">Funcionalidades do Sistema</div>
+            </div>
+            <div class="align-items-center br-item">
+              <button class="br-button circle small" type="button" aria-label="Funcionalidade 1"><i class="fas fa-chart-bar" aria-hidden="true"></i><span class="text">Funcionalidade 1</span>
+              </button>
+            </div>
+            <div class="align-items-center br-item">
+              <button class="br-button circle small" type="button" aria-label="Funcionalidade 2"><i class="fas fa-headset" aria-hidden="true"></i><span class="text">Funcionalidade 2</span>
+              </button>
+            </div>
+            <div class="align-items-center br-item">
+              <button class="br-button circle small" type="button" aria-label="Funcionalidade 3"><i class="fas fa-comment" aria-hidden="true"></i><span class="text">Funcionalidade 3</span>
+              </button>
+            </div>
+            <div class="align-items-center br-item">
+              <button class="br-button circle small" type="button" aria-label="Funcionalidade 4"><i class="fas fa-adjust" aria-hidden="true"></i><span class="text">Funcionalidade 4</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="header-search-trigger">
+          <button class="br-button circle" type="button" aria-label="Abrir Busca" data-toggle="search" data-target=".header-search"><i class="fas fa-comment" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="header-login">
+          <div class="header-sign-in">
+            <button class="br-sign-in small" type="button" data-trigger="login"><i class="fas fa-user" aria-hidden="true"></i><span class="d-sm-inline">Entrar</span>
+            </button>
+          </div>
+          <div class="header-avatar d-none">
+            <div class="avatar dropdown"><span class="br-avatar" title="Fulana da Silva"><span class="image"><img src="https://picsum.photos/id/823/400" alt="Avatar"/></span></span>
+              <button class="br-button circle small" type="button" aria-label="Abrir Menu de usuário" data-toggle="dropdown"><i class="fas fa-angle-down" aria-hidden="true"></i>
+              </button>
+              <div class="br-notification">
+                <div class="notification-header">
+                  <div class="row">
+                    <div class="col-10"><span class="text-bold">Fulano da Silva</span><br/><small>nome.sobrenome@dominio.gov</small></div>
+                  </div>
+                </div>
+                <div class="notification-body">
+                  <div class="br-tab">
+                    <nav class="tab-nav">
+                      <ul>
+                        <li class="tab-item">
+                          <button type="button" data-panel="notification-panel-1-34796"><span class="name"><span class="d-flex flex-column flex-sm-row"><span class="icon mb-1 mb-sm-0 mr-sm-1"><i class="fas fa-image" aria-hidden="true"></i></span><span class="name">Item</span></span></span></button>
+                        </li>
+                        <li class="tab-item active">
+                          <button type="button" data-panel="notification-panel-2-34796"><span class="name"><span class="d-flex flex-column flex-sm-row"><span class="icon mb-1 mb-sm-0 mr-sm-1"><i class="fas fa-image" aria-hidden="true"></i></span><span class="name">Item</span></span></span></button>
+                        </li>
+                      </ul>
+                    </nav>
+                    <div class="tab-content">
+                      <div class="tab-panel" id="notification-panel-1-34796">
+                        <div class="br-list">
+                          <button class="br-item" type="button"><i class="fas fa-heartbeat" aria-hidden="true"></i>Link de Acesso
+                          </button><span class="br-divider"></span>
+                          <button class="br-item" type="button"><i class="fas fa-heartbeat" aria-hidden="true"></i>Link de Acesso
+                          </button><span class="br-divider"></span>
+                          <button class="br-item" type="button"><i class="fas fa-heartbeat" aria-hidden="true"></i>Link de Acesso
+                          </button>
+                        </div>
+                      </div>
+                      <div class="tab-panel active" id="notification-panel-2-34796">
+                        <div class="br-list">
+                          <button class="br-item" type="button"><span class="br-tag status small warning"></span><span class="text-bold">Título</span><span class="text-medium mb-2">25 de out</span><span>Nostrud consequat culpa ex mollit aute. Ex ex veniam ea labore laboris duis duis elit. Ex aute dolor enim aute Lorem dolor. Duis labore ad anim culpa. Non aliqua excepteur sunt eiusmod ex consectetur ex esse laborum velit ut aute.</span>
+                          </button><span class="br-divider"></span>
+                          <button class="br-item" type="button"><span class="text-bold">Título</span><span class="text-medium mb-2">24 de out</span><span>Labore nulla elit laborum nulla duis. Deserunt ad nulla commodo occaecat nulla proident ea proident aliquip dolore sunt nulla. Do sit eu consectetur quis culpa. Eiusmod minim irure sint nulla incididunt occaecat ipsum mollit in ut. Minim adipisicing veniam adipisicing velit nostrud duis consectetur aute nulla deserunt culpa aliquip.</span>
+                          </button><span class="br-divider"></span>
+                          <button class="br-item" type="button"><span class="br-tag status small warning"></span><span class="text-bold">Título</span><span class="text-medium mb-2">03 de out</span><span>Duis qui dolor dolor qui sint consectetur. Ipsum eu dolore ex anim reprehenderit laborum commodo. Labore do ut nulla eiusmod consectetur.</span>
+                          </button><span class="br-divider"></span>
+                          <button class="br-item" type="button"><span class="text-bold">Título</span><span class="text-medium mb-2">16 de mai</span><span>Sunt velit dolor enim mollit incididunt irure est. Ad ea Lorem culpa quis occaecat sunt in exercitation nisi. Sit laborum laborum dolor culpa ipsum velit. Non nulla nisi dolore et anim consequat officia deserunt amet qui. Incididunt exercitation irure labore ut Lorem culpa. Dolore ea irure pariatur ullamco culpa veniam amet dolor in fugiat pariatur ut. Sit non ut enim et incididunt tempor irure pariatur ex proident labore cillum dolore nisi.</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+</header>
+
+  <div class="menu" style="width: 64px;
+    max-width: 64px;
+    min-width: 64px;">
+    <a class="flex items-center justify-center mt-3" href="#">
+      <svg class="w-8 h-8 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+        <path d="M11 17a1 1 0 001.447.894l4-2A1 1 0 0017 15V9.236a1 1 0 00-1.447-.894l-4 2a1 1 0 00-.553.894V17zM15.211 6.276a1 1 0 000-1.788l-4.764-2.382a1 1 0 00-.894 0L4.789 4.488a1 1 0 000 1.788l4.764 2.382a1 1 0 00.894 0l4.764-2.382zM4.447 8.342A1 1 0 003 9.236V15a1 1 0 00.553.894l4 2A1 1 0 009 17v-5.764a1 1 0 00-.553-.894l-4-2z" />
+      </svg>
+    </a>
+    <div style="border-top: 0;" class="flex flex-col items-center mt-3 border-t border-gray-300">
+      <a class="flex items-center justify-center w-12 h-12 mt-2 rounded hover:bg-gray-300" href="#">
+        <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+        </svg>
+      </a>
+      <a class="flex items-center justify-center w-12 h-12 mt-2 rounded hover:bg-gray-300" href="#">
+        <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+      </a>
+      <a class="flex items-center justify-center w-12 h-12 mt-2 bg-gray-300 rounded" href="#">
+        <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2w-6 h-6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg>
+      </a>
+      <a class="flex items-center justify-center w-12 h-12 mt-2 rounded hover:bg-gray-300" href="#">
+        <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
+        </svg>
+      </a>
+    </div>
+    <div class="flex flex-col items-center mt-2 border-t border-gray-300">
+      <a class="flex items-center justify-center w-12 h-12 mt-2 rounded hover:bg-gray-300" href="#">
+        <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+      </a>
+      <a class="flex items-center justify-center w-12 h-12 mt-2 rounded hover:bg-gray-300" href="#">
+        <svg class="w-6 h-6 stroke-current"  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+        </svg>
+      </a>
+      <a class="relative flex items-center justify-center w-12 h-12 mt-2 hover:bg-gray-300" href="#">
+        <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2w-6 h-6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+        </svg>
+        <span class="absolute top-0 left-0 w-2 h-2 mt-2 ml-2 bg-indigo-500 rounded-full"></span>
+      </a>
+    </div>
+    
+     <a style="color: #FF4B2B; bottom: 0px;  position: absolute;" class="flex items-center justify-center w-16 h-16 mt-auto bg-gray-200 hover:bg-gray-300" href="#">
+        <svg class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 38 38" stroke="currentColor" enable-background="new 0 0 32 32" id="Layer_4" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g><line fill="none" stroke="#f01826" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" x1="28" x2="1" y1="16" y2="16"/><polyline fill="none" points="7,22 1,16 7,10     " stroke="#f01826" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9,8V3   c0-1.105,0.895-2,2-2h18c1.105,0,2,0.895,2,2v26c0,1.105-0.895,2-2,2H11c-1.105,0-2-0.895-2-2v-5" fill="none" stroke="#f01826" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/></g></svg>
+     </a>
+  </div>
+
+<main>
+  <div class="helper">
+    RESIZE THE WINDOW
+		<span>Breakpoints on 900px and 400px</span>
+  </div>
+  
+  <div class="menu-right">
+    <a class="flex items-center w-full px-3 mt-3" href="#">
+      <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2w-6 h-6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+          </svg>
+      <span class="ml-2 text-sm font-medium">Messages</span>
+    </a>
+    <div class="w-full px-2">
+      <div class="flex flex-col items-center w-full mt-3 border-t border-gray-300">
+        <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-300" href="#">
+          <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span class="ml-2 text-sm font-medium">Dasboard</span>
+        </a>
+        <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-300" href="#">
+          <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span class="ml-2 text-sm font-medium">Dasboard</span>
+        </a>
+        <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-300" href="#">
+          <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span class="ml-2 text-sm font-medium">Dasboard</span>
+        </a>
+        <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-300" href="#">
+          <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span class="ml-2 text-sm font-medium">Dasboard</span>
+        </a>
+        <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-300" href="#">
+          <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span class="ml-2 text-sm font-medium">Dasboard</span>
+        </a>
+        <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-300" href="#">
+          <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span class="ml-2 text-sm font-medium">Dasboard</span>
+        </a>
+        <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-300" href="#">
+          <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span class="ml-2 text-sm font-medium">Dasboard</span>
+        </a>
+        <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-300" href="#">
+          <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span class="ml-2 text-sm font-medium">Dasboard</span>
+        </a>
+        <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-300" href="#">
+          <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span class="ml-2 text-sm font-medium">Dasboard</span>
+        </a>
+        <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-300" href="#">
+          <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span class="ml-2 text-sm font-medium">Dasboard</span>
+        </a>
+      </div>
+      
+    </div>
+  </div>
+
+ <div class="navbar">
+
+  <a href="#"><i class="fa fa-fw fa-home"></i></a>
+  <a href="#"><i class="fa fa-fw fa-search"></i></a>
+  <a href="#"><i class="fa fa-fw fa-play-circle"></i></a>
+  <a href="#"><i class="fa fa-fw fa-envelope"></i></a>
+  <a href="#"><i class="fa fa-fw fa-shopping-bag"></i></a>
+  <a href="#"><i class="fa fa-fw fa-user"></i></a>
+</div>
+
+</main>
+  
+  
+
+<style>
+
+.navbar {
+  overflow: hidden;
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 6;
+  display: none;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 3vw;
+  width: 16.6%;
+    height: 8vh;
+}
+
+.navbar i{
+  font-size: 5vw;
+}
+
+.navbar a:hover {
+  background: #f1f1f1;
+  color: #000;
+}
+
+.navbar a.active {
+  background-color: #04AA6D;
+  color: #000;
+}
+
+
+</style>
+
+ 
