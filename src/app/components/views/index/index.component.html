@@ -1,5 +1,4 @@
 
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">  
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.1/tailwind.min.css'>
@@ -17,17 +16,27 @@ body {
   margin: 0;
   font-family: "Open Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
   padding-left: 64px;
+  height: 100%;
+}
+a {
+    color: #333 !important;
+}
+div[ng-view]{
+     height: 100%;
 }
 html{
   background: rgb(244,244,244);
 }
-header{margin-bottom: 1.7%;
+header{
     margin-right: 2%;
-    border-radius: 0px 5px 5px 0px;
+    margin-left: 86px;
+    border-radius: 5px;
     }
 main {
   height: 100%;
     width: 100%;
+    background: rgb(244,244,244) ;
+    overflow: auto;
 }
 main .helper {
  background: #fff;
@@ -35,7 +44,7 @@ main .helper {
     top: 0%;
     left: 0%;
     width: 73%;
-    height: 100vh;
+    height: 100%;
     text-align: center;
     border-radius: 0px 5px 5px 0px;
     font-size: 2em;
@@ -49,7 +58,7 @@ main .helper span {
   display: block;
 }
 .menu {
-  background: rgba(243,244,246);
+  background: #e8e8e8;
   height: 100vh;
   position: fixed;
   top: 0;
@@ -65,11 +74,11 @@ main .helper span {
     /* top: 142px; */
     float: right;
     margin-right: 2%;
+    margin-top: 1.7%;
     right: 0;
     z-index: 5;
     outline: none;
     width: 23%;
-    box-shadow: -10px -10px 9px -10px #ddd;
     border-radius: 5px;
 }
 .menu .avatar {
@@ -589,7 +598,7 @@ main .helper span {
 </style>
 
   
-  
+<div style="background: rgb(244,244,244);"> 
 <header class="br-header">
   <div class="container-lg">
     <div class="header-top">
@@ -642,7 +651,7 @@ main .helper span {
         </div>
         <div class="header-login">
           <div class="header-sign-in">
-            <button class="br-sign-in small" type="button" data-trigger="login"><i class="fas fa-user" aria-hidden="true"></i><span class="d-sm-inline">Entrar</span>
+            <button (click)="open(content)" class="br-sign-in small" type="button" data-trigger="login"><i class="fas fa-plus" aria-hidden="true"></i><span class="d-sm-inline">Post</span>
             </button>
           </div>
           <div class="header-avatar d-none">
@@ -702,7 +711,7 @@ main .helper span {
   
   </div>
 </header>
-
+</div>
   <div class="menu" style="width: 64px;
     max-width: 64px;
     min-width: 64px;">
@@ -759,84 +768,260 @@ main .helper span {
   </div>
 
 <main>
-  <div class="helper">
-    RESIZE THE WINDOW
-		<span>Breakpoints on 900px and 400px</span>
+  <div class="helper" style="background: transparent;">
+      <div style="width: 92%; margin-left: 96px;  background: transparent;">
+    <div class="row">
+        <div class="col-lg-12 layout-spacing">
+            <div class="">
+                <div class="widget-header">
+                </div>
+                <div class="widget-content widget-content-area" style="background: transparent;">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div id="content_1" class="tabcontent story-area"> 
+                                <div class="story-container-1">
+                                    <div class="single-create-story">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="single-create-story-bg" style="filter: brightness( 26% );height: 100%; ">
+                                        <div class="create-story-author" style="position: absolute; top: 27%; right: 18%;">
+                                            <i class="fa fa-plus-circle fa-2x text-info"></i>
+                                            <p>Create a story</p>
+                                        </div>
+                                    </div>
+                                    <div class="single-story">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="single-story-bg">
+                                        <div class="story-author">
+                                            <img src="https://bootdey.com/img/Content/avatar/avatar2.png">
+                                            <p>John</p>
+                                        </div>
+                                    </div>
+                                    <div class="single-story">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar3.png" class="single-story-bg">
+                                        <div class="story-author">
+                                            <img src="https://bootdey.com/img/Content/avatar/avatar3.png">
+                                            <p>Mike</p>
+                                        </div>
+                                    </div>
+                                    <div class="single-story">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar4.png" class="single-story-bg">
+                                        <div class="story-author">
+                                            <img src="https://bootdey.com/img/Content/avatar/avatar4.png">
+                                            <p>Lisa</p>
+                                        </div>
+                                    </div>
+                                    <div class="single-story">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="single-story-bg">
+                                        <div class="story-author">
+                                            <img src="https://bootdey.com/img/Content/avatar/avatar6.png">
+                                            <p>Jonthy</p>
+                                        </div>
+                                    </div>
+                                    <div class="single-story">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" class="single-story-bg">
+                                        <div class="story-author">
+                                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png">
+                                            <p>Steve</p>
+                                        </div>
+                                    </div>
+                                    <div class="single-story">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar8.png" class="single-story-bg">
+                                        <div class="story-author">
+                                            <img src="https://bootdey.com/img/Content/avatar/avatar8.png">
+                                            <p>Jenni</p>
+                                        </div>
+                                    </div>
+                                    <div class="single-story">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="single-story-bg">
+                                        <div class="story-author">
+                                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png">
+                                            <p>Sagarika</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+      <app-gridlist></app-gridlist>
   </div>
   
   <div class="menu-right">
-    <a class="flex items-center w-full px-3 mt-3" href="#">
-      <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2w-6 h-6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
-          </svg>
-      <span class="ml-2 text-sm font-medium">Messages</span>
-    </a>
-    <div class="w-full px-2">
-      <div class="flex flex-col items-center w-full mt-3 border-t border-gray-300">
-        <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-300" href="#">
-          <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          <span class="ml-2 text-sm font-medium">Dasboard</span>
-        </a>
-        <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-300" href="#">
-          <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          <span class="ml-2 text-sm font-medium">Dasboard</span>
-        </a>
-        <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-300" href="#">
-          <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          <span class="ml-2 text-sm font-medium">Dasboard</span>
-        </a>
-        <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-300" href="#">
-          <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          <span class="ml-2 text-sm font-medium">Dasboard</span>
-        </a>
-        <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-300" href="#">
-          <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          <span class="ml-2 text-sm font-medium">Dasboard</span>
-        </a>
-        <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-300" href="#">
-          <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          <span class="ml-2 text-sm font-medium">Dasboard</span>
-        </a>
-        <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-300" href="#">
-          <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          <span class="ml-2 text-sm font-medium">Dasboard</span>
-        </a>
-        <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-300" href="#">
-          <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          <span class="ml-2 text-sm font-medium">Dasboard</span>
-        </a>
-        <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-300" href="#">
-          <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          <span class="ml-2 text-sm font-medium">Dasboard</span>
-        </a>
-        <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-300" href="#">
-          <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          <span class="ml-2 text-sm font-medium">Dasboard</span>
-        </a>
+     <div
+                        id="plist" class="people-list">
+                        <div
+                           class="input-group">
+                           <div
+                              class="input-group-prepend"> <span
+                              class="input-group-text"><i
+                              class="fa fa-search"></i></span></div>
+                           <input
+                              type="text" class="form-control" placeholder="Search...">
+                        </div>
+                        <ul
+                           class="list-unstyled chat-list mt-2 mb-0">
+                           <li
+                              class="clearfix">
+                              <img
+                                 src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">
+                              <div
+                                 class="about">
+                                 <div
+                                    class="name">Vincent Porter</div>
+                                 <div
+                                    class="status"> <i
+                                    class="fa fa-circle offline"></i> left 7 mins ago</div>
+                              </div>
+                           </li>
+                           <li
+                              class="clearfix">
+                              <img
+                                 src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="avatar">
+                              <div
+                                 class="about">
+                                 <div
+                                    class="name">Aiden Chavez</div>
+                                 <div
+                                    class="status"> <i
+                                    class="fa fa-circle online"></i> online</div>
+                              </div>
+                           </li>
+                           <li
+                              class="clearfix">
+                              <img
+                                 src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="avatar">
+                              <div
+                                 class="about">
+                                 <div
+                                    class="name">Mike Thomas</div>
+                                 <div
+                                    class="status"> <i
+                                    class="fa fa-circle online"></i> online</div>
+                              </div>
+                           </li>
+                           <li
+                              class="clearfix">
+                              <img
+                                 src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
+                              <div
+                                 class="about">
+                                 <div
+                                    class="name">Christian Kelly</div>
+                                 <div
+                                    class="status"> <i
+                                    class="fa fa-circle offline"></i> left 10 hours ago</div>
+                              </div>
+                           </li>
+                           <li
+                              class="clearfix">
+                              <img
+                                 src="https://bootdey.com/img/Content/avatar/avatar8.png" alt="avatar">
+                              <div
+                                 class="about">
+                                 <div
+                                    class="name">Monica Ward</div>
+                                 <div
+                                    class="status"> <i
+                                    class="fa fa-circle online"></i> online</div>
+                              </div>
+                           </li>
+                           <li
+                              class="clearfix">
+                              <img
+                                 src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="avatar">
+                              <div
+                                 class="about">
+                                 <div
+                                    class="name">Dean Henry</div>
+                                 <div
+                                    class="status"> <i
+                                    class="fa fa-circle offline"></i> offline since Oct 28</div>
+                              </div>
+                           </li>
+                             <li
+                              class="clearfix">
+                              <img
+                                 src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">
+                              <div
+                                 class="about">
+                                 <div
+                                    class="name">Vincent Porter</div>
+                                 <div
+                                    class="status"> <i
+                                    class="fa fa-circle offline"></i> left 7 mins ago</div>
+                              </div>
+                           </li>
+                           <li
+                              class="clearfix">
+                              <img
+                                 src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="avatar">
+                              <div
+                                 class="about">
+                                 <div
+                                    class="name">Aiden Chavez</div>
+                                 <div
+                                    class="status"> <i
+                                    class="fa fa-circle online"></i> online</div>
+                              </div>
+                           </li>
+                           <li
+                              class="clearfix">
+                              <img
+                                 src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="avatar">
+                              <div
+                                 class="about">
+                                 <div
+                                    class="name">Mike Thomas</div>
+                                 <div
+                                    class="status"> <i
+                                    class="fa fa-circle online"></i> online</div>
+                              </div>
+                           </li>
+                           <li
+                              class="clearfix">
+                              <img
+                                 src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
+                              <div
+                                 class="about">
+                                 <div
+                                    class="name">Christian Kelly</div>
+                                 <div
+                                    class="status"> <i
+                                    class="fa fa-circle offline"></i> left 10 hours ago</div>
+                              </div>
+                           </li>
+                           <li
+                              class="clearfix">
+                              <img
+                                 src="https://bootdey.com/img/Content/avatar/avatar8.png" alt="avatar">
+                              <div
+                                 class="about">
+                                 <div
+                                    class="name">Monica Ward</div>
+                                 <div
+                                    class="status"> <i
+                                    class="fa fa-circle online"></i> online</div>
+                              </div>
+                           </li>
+                           <li
+                              class="clearfix">
+                              <img
+                                 src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="avatar">
+                              <div
+                                 class="about">
+                                 <div
+                                    class="name">Dean Henry</div>
+                                 <div
+                                    class="status"> <i
+                                    class="fa fa-circle offline"></i> offline since Oct 28</div>
+                              </div>
+                           </li>
+                        </ul>
       </div>
       
     </div>
-  </div>
 
  <div class="navbar">
 
@@ -893,4 +1078,582 @@ main .helper span {
 
 </style>
 
- 
+<style>
+    .widget {
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 4px 6px 0 rgb(85 85 85 / 8%), 0 1px 20px 0 rgb(0 0 0 / 7%), 0px 1px 11px 0px rgb(0 0 0 / 7%);
+    -moz-box-shadow: 0 4px 6px 0 rgba(85, 85, 85, 0.08), 0 1px 20px 0 rgba(0, 0, 0, 0.07), 0px 1px 11px 0px rgba(0, 0, 0, 0.07);
+    box-shadow: 0 4px 6px 0 rgb(85 85 85 / 8%), 0 1px 20px 0 rgb(0 0 0 / 7%), 0px 1px 11px 0px rgb(0 0 0 / 7%);
+}
+.widget.box .widget-header {
+    background: #fff;
+    padding: 0px 8px 0px;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+}
+.widget .widget-header {
+    border-bottom: 0px solid #f1f2f3;
+}
+.widget.box .widget-header {
+    background: #fff;
+    padding: 0px 8px 0px;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+}
+.widget .widget-header {
+    border-bottom: 0px solid #f1f2f3;
+}
+.widget .widget-header:after {
+    clear: both;
+}
+.widget .widget-header:before, .widget .widget-header:after {
+    display: table;
+    content: "";
+    line-height: 0;
+}
+.widget-content-area {
+    padding: 20px;
+    position: relative;
+    background-color: #fff;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+.story-container-1 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.story-container-1 .single-create-story {
+    height: 175px;
+    width: 110px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background: #e4e4e4;
+    text-align: center;
+}
+img.single-create-story-bg {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+}
+.create-story-author img {
+    height: 40px;
+    width: 40px;
+    margin-top: -20px;
+    padding: 4px;
+    background: #e4e4e4;
+    border-radius: 50%;
+}
+.story-container-1 .single-story {
+    height: 175px;
+    width: 110px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.story-container-1 .single-story::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-image: linear-gradient(rgb(255 0 0 / 0%), black);
+}
+img.single-story-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.story-container-1 .story-author {
+   position: absolute;
+    top: 50%;
+    margin-left: auto;
+    margin-top: auto;
+    left: 14%;
+    transform: translateY(-50%);
+    /* right: 0px; */
+    text-align: center;
+    z-index: 99;
+    cursor: pointer;
+}
+
+.story-author img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    border: 1px solid white;
+    padding: 4px;
+}
+
+.story-container-1 .story-author p {
+    color: #fff;
+    width: 100%;
+    margin: 5px 0px 0px 0px;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.create-story-author p {
+    margin: 0px;
+    font-size: 13px;
+    font-weight: 500;
+}
+</style>
+
+ <style type="text/css">
+     body{
+            background-color: #f4f7f6;
+            margin-top:20px;
+            }
+            .card {
+            background: #fff;
+            transition: .5s;
+            border: 0;
+            margin-bottom: 30px;
+            border-radius: .55rem;
+            position: relative;
+            width: 100%;
+            box-shadow: 0 1px 2px 0 rgb(0 0 0 / 10%);
+            }
+            .chat-app .people-list {
+            width: 280px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            padding: 20px;
+            z-index: 7
+            }
+            .chat-app .chat {
+            margin-left: 280px;
+            border-left: 1px solid #eaeaea
+            }
+            .people-list {
+            -moz-transition: .5s;
+            -o-transition: .5s;
+            -webkit-transition: .5s;
+            transition: .5s
+            }
+            .people-list .chat-list li {
+            padding: 10px 15px;
+            list-style: none;
+            border-radius: 3px
+            }
+            .people-list .chat-list li:hover {
+            background: #efefef;
+            cursor: pointer
+            }
+            .people-list .chat-list li.active {
+            background: #efefef
+            }
+            .people-list .chat-list li .name {
+            font-size: 15px
+            }
+            .people-list .chat-list img {
+            width: 45px;
+            border-radius: 50%
+            }
+            .people-list img {
+            float: left;
+            border-radius: 50%
+            }
+            .people-list .about {
+            float: left;
+            padding-left: 8px
+            }
+            .people-list .status {
+            color: #999;
+            font-size: 13px
+            }
+            .chat .chat-header {
+            padding: 15px 20px;
+            border-bottom: 2px solid #f4f7f6
+            }
+            .chat .chat-header img {
+            float: left;
+            border-radius: 40px;
+            width: 40px
+            }
+            .chat .chat-header .chat-about {
+            float: left;
+            padding-left: 10px
+            }
+            .chat .chat-history {
+            padding: 20px;
+            border-bottom: 2px solid #fff
+            }
+            .chat .chat-history ul {
+            padding: 0
+            }
+            .chat .chat-history ul li {
+            list-style: none;
+            margin-bottom: 30px
+            }
+            .chat .chat-history ul li:last-child {
+            margin-bottom: 0px
+            }
+            .chat .chat-history .message-data {
+            margin-bottom: 15px
+            }
+            .chat .chat-history .message-data img {
+            border-radius: 40px;
+            width: 40px
+            }
+            .chat .chat-history .message-data-time {
+            color: #434651;
+            padding-left: 6px
+            }
+            .chat .chat-history .message {
+            color: #444;
+            padding: 18px 20px;
+            line-height: 26px;
+            font-size: 16px;
+            border-radius: 7px;
+            display: inline-block;
+            position: relative
+            }
+            .chat .chat-history .message:after {
+            bottom: 100%;
+            left: 7%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+            border-bottom-color: #fff;
+            border-width: 10px;
+            margin-left: -10px
+            }
+            .chat .chat-history .my-message {
+            background: #efefef
+            }
+            .chat .chat-history .my-message:after {
+            bottom: 100%;
+            left: 30px;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+            border-bottom-color: #efefef;
+            border-width: 10px;
+            margin-left: -10px
+            }
+            .chat .chat-history .other-message {
+            background: #e8f1f3;
+            text-align: right
+            }
+            .chat .chat-history .other-message:after {
+            border-bottom-color: #e8f1f3;
+            left: 93%
+            }
+            .chat .chat-message {
+            padding: 20px
+            }
+            .online,
+            .offline,
+            .me {
+            margin-right: 2px;
+            font-size: 8px;
+            vertical-align: middle
+            }
+            .online {
+            color: #86c541
+            }
+            .offline {
+            color: #e47297
+            }
+            .me {
+            color: #1d8ecd
+            }
+            .float-right {
+            float: right
+            }
+            .clearfix:after {
+            visibility: hidden;
+            display: block;
+            font-size: 0;
+            content: " ";
+            clear: both;
+            height: 0
+            }
+            @media only screen and (max-width: 767px) {
+            .chat-app .people-list {
+            height: 465px;
+            width: 100%;
+            overflow-x: auto;
+            background: #fff;
+            left: -400px;
+            display: none
+            }
+            .chat-app .people-list.open {
+            left: 0
+            }
+            .chat-app .chat {
+            margin: 0
+            }
+            .chat-app .chat .chat-header {
+            border-radius: 0.55rem 0.55rem 0 0
+            }
+            .chat-app .chat-history {
+            height: 300px;
+            overflow-x: auto
+            }
+            }
+            @media only screen and (min-width: 768px) and (max-width: 992px) {
+            .chat-app .chat-list {
+            height: 650px;
+            overflow-x: auto
+            }
+            .chat-app .chat-history {
+            height: 600px;
+            overflow-x: auto
+            }
+            }
+            @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+            .chat-app .chat-list {
+            height: 480px;
+            overflow-x: auto
+            }
+            .chat-app .chat-history {
+            height: calc(100vh - 350px);
+            overflow-x: auto
+            }
+            }
+         </style> 
+         
+        <ng-template #content let-c="close" let-d="dismiss" style=" max-width: 75%; width: 75%;">
+  <div class="modal-body" >
+    
+		<div class="tab_container">
+			<input id="tab1" type="radio" name="tabs" checked>
+                        <label for="tab1"><i class="fa fa fa-align-left"></i><span>&nbsp; Textão </span></label>
+
+			<input id="tab2" type="radio" name="tabs">
+			<label for="tab2"><i class="fa fa-camera-retro"></i><span> &nbsp;Foto(s) </span></label>
+
+			<input id="tab3" type="radio" name="tabs">
+			<label for="tab3"><i class="fa fa-bar-chart-o"></i><span>Enquetes</span></label>
+
+			<input id="tab4" type="radio" name="tabs">
+			<label for="tab4"><i class="fa fa-video-camera"></i><span>Video(s)</span></label>
+
+			<input id="tab5" type="radio" name="tabs">
+			<label for="tab5"><i class="fa fa-mobile"></i><span> &nbsp;Status&nbsp; </span></label>
+
+			<section id="content1" class="tab-content">
+                                 <div
+                                    class="panel-body">
+                                    <textarea class="form-control" rows="2" placeholder="What are you thinking?"></textarea>
+                                    <div
+                                       class="mar-top clearfix"> <button
+                                       class="btn btn-sm btn-primary pull-right" type="submit"><i
+                                       class="fa fa-pencil fa-fw"></i> Share</button> <a
+                                       class="btn btn-trans btn-icon fa fa-video-camera add-tooltip" href="#" data-original-title="Add Video" data-toggle="tooltip"></a> <a
+                                       class="btn btn-trans btn-icon fa fa-camera add-tooltip" href="#" data-original-title="Add Photo" data-toggle="tooltip"></a> <a
+                                       class="btn btn-trans btn-icon fa fa-file add-tooltip" href="#" data-original-title="Add File" data-toggle="tooltip"></a><a
+                                       class="btn btn-trans btn-icon fa fa-align-left add-tooltip" href="#" data-original-title="Add File" data-toggle="tooltip"></a></div>
+                                 </div>
+			</section>
+
+			<section id="content2" class="tab-content">
+				<h3>Headline 2</h3>
+		      	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		      	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		      	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+		      	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		      	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		      	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		      	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		      	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		      	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</section>
+
+			<section id="content3" class="tab-content">
+				<h3>Headline 3</h3>
+		      	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		      	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		      	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		      	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		      	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		      	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		      	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		      	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		      	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		      	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		      	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		      	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</section>
+
+			<section id="content4" class="tab-content">
+				<h3>Headline 4</h3>
+		      	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		      	tempor incididunt ut labore et dolore magna aliqua.</p>
+		      	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		      	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		      	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		      	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		      	cillum dolore eu fugiat nulla pariatur.</p>
+		      	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		      	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		      	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		      	consequat.</p>
+			</section>
+
+			<section id="content5" class="tab-content">
+				<h3>Headline 5</h3>
+		      	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		      	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		      	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+		      	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		      	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		      	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		      	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		      	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		      	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</section>
+		</div>
+
+  </div>
+</ng-template>
+         
+         <style>
+             @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css');
+
+*,
+*:after,
+*:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+h1 {
+	color: #ccc;
+	text-align: center;
+}
+
+a {
+  color: #ccc;
+  text-decoration: none;
+  outline: none;
+}
+
+/*Fun begins*/
+.tab_container {
+	width: 100%;
+    margin: 0 auto;
+    padding-top: 0;
+    position: relative;
+}
+
+.tab_container input, section {
+  clear: both;
+  padding-top: 10px;
+  display: none;
+}
+
+label {
+  font-weight: 700;
+  font-size: 18px;
+  display: block;
+  float: left;
+  width: 20%;
+  padding: 1.5em;
+  color: #757575;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  background: #f0f0f0;
+}
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3,
+#tab4:checked ~ #content4,
+#tab5:checked ~ #content5 {
+  display: block;
+  padding: 20px;
+  background: #fff;
+  color: #999;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.tab_container .tab-content p,
+.tab_container .tab-content h3 {
+  -webkit-animation: fadeInScale 0.7s ease-in-out;
+  -moz-animation: fadeInScale 0.7s ease-in-out;
+  animation: fadeInScale 0.7s ease-in-out;
+}
+.tab_container .tab-content h3  {
+  text-align: center;
+}
+
+.tab_container [id^="tab"]:checked + label {
+  background: #fff;
+  box-shadow: inset 0 3px #0CE;
+}
+
+.tab_container [id^="tab"]:checked + label .fa {
+  color: #0CE;
+}
+
+label .fa {
+  font-size: 1.3em;
+  margin: 0 0.4em 0 0;
+}
+
+/*Media query*/
+@media only screen and (max-width: 900px) {
+  label span {
+    display: none;
+  }
+  
+  .tab_container {
+    width: 98%;
+  }
+}
+
+/*Content Animation*/
+@keyframes fadeInScale {
+  0% {
+  	transform: scale(0.9);
+  	opacity: 0;
+  }
+  
+  100% {
+  	transform: scale(1);
+  	opacity: 1;
+  }
+}
+
+.no_wrap {
+  text-align:center;
+  color: #0ce;
+}
+.link {
+  text-align:center;
+}
+             </style>
+         
+  

@@ -16,6 +16,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {PlatformModule} from '@angular/cdk/platform';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -39,6 +40,9 @@ import { UsersidemenuComponent } from './components/views/usersidemenu/usersidem
 import { IndexComponent } from './components/views/index/index.component';
 import { HttpInterceptorService } from './components/security/httpinterceptor.service';
 import { GridlistComponent } from './components/views/gridlist/gridlist.component';
+import { EmailverificationComponent } from './components/security/emailverification/emailverification.component';
+import { ResetpassemailComponent } from './components/security/resetpassemail/resetpassemail.component';
+import { ResetpassnewComponent } from './components/security/resetpassnew/resetpassnew.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +65,10 @@ import { GridlistComponent } from './components/views/gridlist/gridlist.componen
     ProfilesettingComponent,
     UsersidemenuComponent,
     IndexComponent,
-    GridlistComponent
+    GridlistComponent,
+    EmailverificationComponent,
+    ResetpassemailComponent,
+    ResetpassnewComponent
   ],
   imports: [
     BrowserModule,
@@ -81,7 +88,8 @@ import { GridlistComponent } from './components/views/gridlist/gridlist.componen
     MatSnackBarModule,
     BrowserAnimationsModule,
     MatGridListModule,
-    PlatformModule
+    PlatformModule,
+    NgbModule
   ],
   providers: [
         {
