@@ -17,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {PlatformModule} from '@angular/cdk/platform';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxDropzoneModule } from 'ngx-dropzone';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -89,7 +90,8 @@ import { ResetpassnewComponent } from './components/security/resetpassnew/resetp
     BrowserAnimationsModule,
     MatGridListModule,
     PlatformModule,
-    NgbModule
+    NgbModule,
+    NgxDropzoneModule 
   ],
   providers: [
         {

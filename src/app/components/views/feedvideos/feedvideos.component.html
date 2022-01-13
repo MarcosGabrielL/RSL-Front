@@ -1,1 +1,192 @@
-<p>feedvideos works!</p>
+<style>
+    html, body {
+  margin: 0;
+	font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+	scroll-behavior: smooth;
+	-webkit-font-smoothing: antialiased;
+	background-color: #121212;
+}
+.video-sec-wrap {
+	width: 100%;
+	height: 100%;
+}
+.video-sec {
+	    width: 96%;
+    margin: 0;
+    /* border-bottom: 2px solid #353535; */
+    text-align: left;
+}
+.video-sec-middle {
+	grid-template-columns: repeat(3,1fr);
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-rows: auto;
+    grid-row-gap: 15px;
+    grid-column-gap: 10px;
+    padding: 20px 0;
+}
+.thumb-wrap {
+	display: inline;
+	cursor: pointer;
+}
+.thumb {
+	display: block;
+	width: 100%;
+	box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+	opacity: 1;
+	transition: all .2s ease-in-out;
+}
+.thumb:hover {
+	opacity: .8;
+	box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .5);
+}
+.thumb-info {
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	padding: .4em;
+}
+.thumb-title {
+	color: #333;
+	margin-top: -5px;
+    margin: 0;
+    font-size: 1.2vw;
+}
+.thumb-user {
+	color: #333;
+    display: inline-block;
+    margin: 0;
+    float: left;
+    font-size: 1vw;
+}
+.thumb-text {
+	color: #7e7e7e;
+	display: inline-block;
+	margin: 0;
+	font-size: 1vw;
+	float: right;
+}
+.video-sec-title {
+	font-weight: bolder;
+	font-size: 1.4em;
+	color: #f5f5f5;
+	margin: 5px 0 10px 10px;
+}
+.video-showmore {
+	font-weight: bold;
+	font-variant: all-petite-caps;
+	display: block;
+	color: #7e7e7e;
+	padding: 10px;
+	font-size: 1.2em;
+}
+@media only screen and (max-width: 1456px) {
+	.video-sec-middle {
+		grid-template-columns: repeat(3,1fr);
+	}
+}
+@media only screen and (max-width: 1024px) {
+	.video-sec-middle {
+	  grid-template-columns: repeat(3,1fr);
+	}
+}
+@media only screen and (max-width: 756px) {
+  .video-sec-middle {
+   grid-template-columns: repeat(2,1fr);
+  }
+}
+@media only screen and (max-width: 496px) {
+  .video-sec-middle {
+   grid-template-columns: repeat(1,1fr);
+  }
+}
+</style>
+
+<article class="video-sec-wrap">
+			<div class="video-sec">
+				<ul class="video-sec-middle" id="vid-grid">
+					<li class="thumb-wrap"><a href="">
+						<img class="thumb" src="https://images.unsplash.com/photo-1555661225-ade1bbf3fbb3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1957&q=80" alt="">
+						<div class="thumb-info">
+							<p class="thumb-title">This is the longest title of them all, such a long title that it is beeing cut off</p>
+							<p class="thumb-user">Username</p>
+							<p class="thumb-text">1.3K Views</p>
+						</div>
+					</a></li>
+					<li class="thumb-wrap"><a href="">
+						<img class="thumb" src="https://images.unsplash.com/photo-1566075247408-2fc9e74810d2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" alt="">
+						<div class="thumb-info">
+							<p class="thumb-title">Video Title 2 - Super...</p>
+							<p class="thumb-user">Username</p>
+							<p class="thumb-text">57K Views</p>
+						</div>
+					</a></li>
+					<li class="thumb-wrap"><a href="">
+						<img class="thumb" src="https://images.unsplash.com/photo-1559083991-9bdef0bb5a39?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1955&q=80" alt="">
+						<div class="thumb-info">
+							<p class="thumb-title">Video Title 3 - Short Title</p>
+							<p class="thumb-user">Username</p>
+							<p class="thumb-text">4.6K Views</p>
+						</div>
+					</a></li>
+					<li class="thumb-wrap"><a href="">
+						<img class="thumb" src="https://images.unsplash.com/photo-1560800589-3d88290dd749?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1955&q=80" alt="">
+						<div class="thumb-info">
+							<p class="thumb-title">Video Title 4</p>
+							<p class="thumb-user">Username</p>
+							<p class="thumb-text">3K Views</p>
+						</div>
+					</a></li>
+					<li class="thumb-wrap"><a href="">
+						<img class="thumb" src="https://images.unsplash.com/photo-1560716092-203a1703e06e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1955&q=80" alt="">
+						<div class="thumb-info">
+							<p class="thumb-title">Video Title 5 - Long Title With New Line, but a bit longer</p>
+							<p class="thumb-user">Username</p>
+							<p class="thumb-text">126K Views</p>
+						</div>
+					</a></li>
+					<li class="thumb-wrap"><a href="">
+						<img class="thumb" src="https://images.unsplash.com/photo-1565210227317-2a6e64e9b778?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" alt="">
+						<div class="thumb-info">
+							<p class="thumb-title">Video Title 6</p>
+							<p class="thumb-user">Username</p>
+							<p class="thumb-text">255 Views</p>
+						</div>
+					</a></li>
+					<li class="thumb-wrap"><a href="">
+						<img class="thumb" src="https://images.unsplash.com/photo-1508180752316-db2148802010?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="">
+						<div class="thumb-info">
+							<p class="thumb-title">Video Title 7 - Long Title With New Line</p>
+							<p class="thumb-user">Username</p>
+							<p class="thumb-text">100K Views</p>
+						</div>
+					</a></li>
+					<li class="thumb-wrap"><a href="">
+						<img class="thumb" src="https://images.unsplash.com/photo-1465287651408-7c76e5e8b191?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" alt="">
+						<div class="thumb-info">
+							<p class="thumb-title">Video Title 8 - Semi Long Title</p>
+							<p class="thumb-user">Username</p>
+							<p class="thumb-text">1.8M Views</p>
+						</div>
+					</a></li>
+					<li class="thumb-wrap"><a href="">
+						<img class="thumb" src="https://images.unsplash.com/photo-1461995748424-ea60adff3fcd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="">
+						<div class="thumb-info">
+							<p class="thumb-title">Video Title 9 - Long Title With New Line</p>
+							<p class="thumb-user">Username</p>
+							<p class="thumb-text">78 Views</p>
+						</div>
+					</a></li>
+					<li class="thumb-wrap"><a href="">
+						<img class="thumb" src="https://images.unsplash.com/photo-1551292831-023188e78222?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" alt="">
+						<div class="thumb-info">
+							<p class="thumb-title">Video Title 10 - Long Title With New Line</p>
+							<p class="thumb-user">Username</p>
+							<p class="thumb-text">22K Views</p>
+						</div>
+					</a></li>
+				</ul>
+				<a class="video-showmore">Show more</a>
+			</div>
+		</article>

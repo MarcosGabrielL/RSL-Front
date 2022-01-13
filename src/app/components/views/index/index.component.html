@@ -36,7 +36,7 @@ main {
   height: 100%;
     width: 100%;
     background: rgb(244,244,244) ;
-    overflow: auto;
+    overflow: hidden;
 }
 main .helper {
  background: #fff;
@@ -593,7 +593,13 @@ main .helper span {
     .group:hover .group-hover\:flex {
         display: flex;
     }
-
+    
+    .none{
+        display: none;
+    }
+    .flex a{
+        cursor: pointer;
+    }
 
 </style>
 
@@ -721,39 +727,117 @@ main .helper span {
       </svg>
     </a>
     <div style="border-top: 0;" class="flex flex-col items-center mt-3 border-t border-gray-300">
-      <a class="flex items-center justify-center w-12 h-12 mt-2 rounded hover:bg-gray-300" href="#">
+      <a #m1  class="flex items-center justify-center w-12 h-12 mt-2 rounded hover:bg-gray-300 bg-gray-300" 
+        (click)="m1.classList.add('bg-gray-300');
+                m2.classList.remove('bg-gray-300'); 
+                m3.classList.remove('bg-gray-300'); 
+                m4.classList.remove('bg-gray-300'); 
+                m5.classList.remove('bg-gray-300'); 
+                m6.classList.remove('bg-gray-300'); 
+                m7.classList.remove('bg-gray-300'); 
+                m8.classList.remove('bg-gray-300'); 
+                feed.classList.remove('none');
+                perfil.classList.add('none');
+                loja.classList.add('none');">
         <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
         </svg>
       </a>
-      <a class="flex items-center justify-center w-12 h-12 mt-2 rounded hover:bg-gray-300" href="#">
+        <a #m2 class="flex items-center justify-center w-12 h-12 mt-2 rounded " 
+           (click)="m2.classList.add('bg-gray-300');
+                m1.classList.remove('bg-gray-300'); 
+                m3.classList.remove('bg-gray-300'); 
+                m4.classList.remove('bg-gray-300'); 
+                m5.classList.remove('bg-gray-300'); 
+                m6.classList.remove('bg-gray-300'); 
+                m7.classList.remove('bg-gray-300'); 
+                m8.classList.remove('bg-gray-300'); 
+                feed.classList.add('none');
+                loja.classList.add('none');
+                perfil.classList.remove('none');">
+        <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+			</svg>
+      </a>
+      <a #m3 class="flex items-center justify-center w-12 h-12 mt-2 rounded hover:bg-gray-300"
+         (click)="m3.classList.add('bg-gray-300');
+                m2.classList.remove('bg-gray-300'); 
+                m1.classList.remove('bg-gray-300'); 
+                m4.classList.remove('bg-gray-300'); 
+                m5.classList.remove('bg-gray-300'); 
+                m6.classList.remove('bg-gray-300'); 
+                m7.classList.remove('bg-gray-300'); 
+                m8.classList.remove('bg-gray-300'); ">
         <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
         </svg>
       </a>
-      <a class="flex items-center justify-center w-12 h-12 mt-2 bg-gray-300 rounded" href="#">
+      <a #m4 class="flex items-center justify-center w-12 h-12 mt-2  " 
+         (click)="m4.classList.add('bg-gray-300');
+                m1.classList.remove('bg-gray-300'); 
+                m2.classList.remove('bg-gray-300'); 
+                m3.classList.remove('bg-gray-300'); 
+                m5.classList.remove('bg-gray-300'); 
+                m6.classList.remove('bg-gray-300'); 
+                m7.classList.remove('bg-gray-300'); 
+                m8.classList.remove('bg-gray-300'); ">
         <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2w-6 h-6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
         </svg>
       </a>
-      <a class="flex items-center justify-center w-12 h-12 mt-2 rounded hover:bg-gray-300" href="#">
+      <a #m5 class="flex items-center justify-center w-12 h-12 mt-2 rounded hover:bg-gray-300" 
+         (click)="m5.classList.add('bg-gray-300');
+                m1.classList.remove('bg-gray-300'); 
+                m2.classList.remove('bg-gray-300'); 
+                m3.classList.remove('bg-gray-300'); 
+                m4.classList.remove('bg-gray-300'); 
+                m6.classList.remove('bg-gray-300'); 
+                m7.classList.remove('bg-gray-300'); 
+                m8.classList.remove('bg-gray-300'); ">
         <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
         </svg>
       </a>
     </div>
     <div class="flex flex-col items-center mt-2 border-t border-gray-300">
-      <a class="flex items-center justify-center w-12 h-12 mt-2 rounded hover:bg-gray-300" href="#">
+      <a #m6 class="flex items-center justify-center w-12 h-12 mt-2 rounded hover:bg-gray-300" 
+         (click)="m6.classList.add('bg-gray-300');
+                m1.classList.remove('bg-gray-300'); 
+                m2.classList.remove('bg-gray-300'); 
+                m3.classList.remove('bg-gray-300'); 
+                m4.classList.remove('bg-gray-300'); 
+                m5.classList.remove('bg-gray-300'); 
+                m7.classList.remove('bg-gray-300'); 
+                m8.classList.remove('bg-gray-300');
+                loja.classList.remove('none');
+                feed.classList.add('none');
+                perfil.classList.add('none'); ">
         <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
         </svg>
       </a>
-      <a class="flex items-center justify-center w-12 h-12 mt-2 rounded hover:bg-gray-300" href="#">
+      <a #m7 class="flex items-center justify-center w-12 h-12 mt-2 rounded hover:bg-gray-300" 
+         (click)="m7.classList.add('bg-gray-300');
+                m1.classList.remove('bg-gray-300'); 
+                m2.classList.remove('bg-gray-300'); 
+                m3.classList.remove('bg-gray-300'); 
+                m4.classList.remove('bg-gray-300'); 
+                m5.classList.remove('bg-gray-300'); 
+                m6.classList.remove('bg-gray-300'); 
+                m8.classList.remove('bg-gray-300'); ">
         <svg class="w-6 h-6 stroke-current"  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
         </svg>
       </a>
-      <a class="relative flex items-center justify-center w-12 h-12 mt-2 hover:bg-gray-300" href="#">
+      <a #m8 class="relative flex items-center justify-center w-12 h-12 mt-2 hover:bg-gray-300"
+         (click)="m8.classList.add('bg-gray-300');
+                m1.classList.remove('bg-gray-300'); 
+                m2.classList.remove('bg-gray-300'); 
+                m3.classList.remove('bg-gray-300'); 
+                m4.classList.remove('bg-gray-300'); 
+                m5.classList.remove('bg-gray-300'); 
+                m6.classList.remove('bg-gray-300'); 
+                m7.classList.remove('bg-gray-300'); ">
         <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2w-6 h-6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
         </svg>
@@ -767,73 +851,132 @@ main .helper span {
      </a>
   </div>
 
+<!-- Tab principal-->
+<style>
+.tabs-container .tabs .tab, .tabs-container .tabs input[type=radio] {
+  display: none;
+}
+
+.tabs-container .tabs input[type=radio] + label {
+  display: inline-block;
+  margin: 0;
+  padding: 0.5rem 1.5rem;
+  font-size: 1.5rem;
+  opacity: 0.6;
+  cursor: pointer;
+  user-select: none;
+}
+
+.tabs-container .tabs input[type=radio]:checked + label {
+  border-bottom: 2px solid #000;
+  opacity: 1;
+}
+
+.tabs-container .tabs .tab {
+  margin: 0;
+  padding: 7% 0;
+}
+
+.tabs input:first-of-type:checked + label ~ .tab:first-of-type,
+.tabs input:nth-of-type(2):checked + label ~ .tab:nth-of-type(2),
+.tabs input:nth-of-type(3):checked + label ~ .tab:nth-of-type(3) {
+  display: block;
+}
+
+.tabs-container .tabs .tab ul {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(auto-fill, minmax(auto, 1fr));
+  grid-auto-flow: row;
+  justify-content: center;
+  list-style: none;
+}
+
+.tabs-container .tabs .tab ul li {
+  margin: 1rem;
+  padding: 2rem;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  aspect-ratio: 3 / 2;
+}
+
+.tabs-container .tabs .tab p {
+  margin: 1.5rem;
+}</style>
+
 <main>
   <div class="helper" style="background: transparent;">
       <div style="width: 92%; margin-left: 96px;  background: transparent;">
-    <div class="row">
-        <div class="col-lg-12 layout-spacing">
-            <div class="">
-                <div class="widget-header">
-                </div>
-                <div class="widget-content widget-content-area" style="background: transparent;">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12">
-                            <div id="content_1" class="tabcontent story-area"> 
-                                <div class="story-container-1">
-                                    <div class="single-create-story">
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="single-create-story-bg" style="filter: brightness( 26% );height: 100%; ">
-                                        <div class="create-story-author" style="position: absolute; top: 27%; right: 18%;">
-                                            <i class="fa fa-plus-circle fa-2x text-info"></i>
-                                            <p>Create a story</p>
-                                        </div>
-                                    </div>
-                                    <div class="single-story">
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="single-story-bg">
-                                        <div class="story-author">
-                                            <img src="https://bootdey.com/img/Content/avatar/avatar2.png">
-                                            <p>John</p>
-                                        </div>
-                                    </div>
-                                    <div class="single-story">
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar3.png" class="single-story-bg">
-                                        <div class="story-author">
-                                            <img src="https://bootdey.com/img/Content/avatar/avatar3.png">
-                                            <p>Mike</p>
-                                        </div>
-                                    </div>
-                                    <div class="single-story">
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar4.png" class="single-story-bg">
-                                        <div class="story-author">
-                                            <img src="https://bootdey.com/img/Content/avatar/avatar4.png">
-                                            <p>Lisa</p>
-                                        </div>
-                                    </div>
-                                    <div class="single-story">
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="single-story-bg">
-                                        <div class="story-author">
-                                            <img src="https://bootdey.com/img/Content/avatar/avatar6.png">
-                                            <p>Jonthy</p>
-                                        </div>
-                                    </div>
-                                    <div class="single-story">
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" class="single-story-bg">
-                                        <div class="story-author">
-                                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png">
-                                            <p>Steve</p>
-                                        </div>
-                                    </div>
-                                    <div class="single-story">
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar8.png" class="single-story-bg">
-                                        <div class="story-author">
-                                            <img src="https://bootdey.com/img/Content/avatar/avatar8.png">
-                                            <p>Jenni</p>
-                                        </div>
-                                    </div>
-                                    <div class="single-story">
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="single-story-bg">
-                                        <div class="story-author">
-                                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png">
-                                            <p>Sagarika</p>
+          <div #feed class="">
+            <div class="row">
+                <div class="col-lg-12 layout-spacing">
+                    <div class="">
+                        <div class="widget-header">
+                        </div>
+                        <div class="widget-content widget-content-area" style="background: transparent;">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <div id="content_1" class="tabcontent story-area"> 
+                                        <div class="story-container-1">
+                                            <div class="single-create-story">
+                                                <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="single-create-story-bg" style="filter: brightness( 26% );height: 100%; ">
+                                                <div class="create-story-author" style="position: absolute; top: 27%; right: 18%;">
+                                                    <i class="fa fa-plus-circle fa-2x text-info"></i>
+                                                    <p>Create a story</p>
+                                                </div>
+                                            </div>
+                                            <div class="single-story">
+                                                <img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="single-story-bg">
+                                                <div class="story-author">
+                                                    <img src="https://bootdey.com/img/Content/avatar/avatar2.png">
+                                                    <p>John</p>
+                                                </div>
+                                            </div>
+                                            <div class="single-story">
+                                                <img src="https://bootdey.com/img/Content/avatar/avatar3.png" class="single-story-bg">
+                                                <div class="story-author">
+                                                    <img src="https://bootdey.com/img/Content/avatar/avatar3.png">
+                                                    <p>Mike</p>
+                                                </div>
+                                            </div>
+                                            <div class="single-story">
+                                                <img src="https://bootdey.com/img/Content/avatar/avatar4.png" class="single-story-bg">
+                                                <div class="story-author">
+                                                    <img src="https://bootdey.com/img/Content/avatar/avatar4.png">
+                                                    <p>Lisa</p>
+                                                </div>
+                                            </div>
+                                            <div class="single-story">
+                                                <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="single-story-bg">
+                                                <div class="story-author">
+                                                    <img src="https://bootdey.com/img/Content/avatar/avatar6.png">
+                                                    <p>Jonthy</p>
+                                                </div>
+                                            </div>
+                                            <div class="single-story">
+                                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" class="single-story-bg">
+                                                <div class="story-author">
+                                                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png">
+                                                    <p>Steve</p>
+                                                </div>
+                                            </div>
+                                            <div class="single-story">
+                                                <img src="https://bootdey.com/img/Content/avatar/avatar8.png" class="single-story-bg">
+                                                <div class="story-author">
+                                                    <img src="https://bootdey.com/img/Content/avatar/avatar8.png">
+                                                    <p>Jenni</p>
+                                                </div>
+                                            </div>
+                                            <div class="single-story">
+                                                <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="single-story-bg">
+                                                <div class="story-author">
+                                                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png">
+                                                    <p>Sagarika</p>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -842,10 +985,47 @@ main .helper span {
                     </div>
                 </div>
             </div>
-        </div>
+          <app-gridlist></app-gridlist>
+          </div>
+
+
+     <div>
+      <div #perfil class="tabs-container none" style="margin-top: 1%;">
+      			<div class="tabs">
+                                  
+      				<input type="radio" name="tabs" id="tab-1" checked="checked">
+      				<label  style="    margin-left: 23%; background: transparent;" for="tab-1">Fotos</label>
+
+      				<input type="radio" name="tabs" id="tab-2">
+      				<label style="background: transparent;" for="tab-2">Videos</label>
+
+      				<input type="radio" name="tabs" id="tab-3">
+      				<label style="background: transparent;" for="tab-3">Status</label>
+                                      
+      				<div class="tab">
+      					 <app-feedimages></app-feedimages>
+      					
+      				</div>
+      				<div class="tab">
+      					  <app-feedvideos></app-feedvideos>
+      				</div>
+      				<div class="tab">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sodales tempus lectus id fermentum. Suspendisse quis sollicitudin orci. Cras non tempor libero. Mauris augue metus, varius id augue id, viverra vulputate dui. Donec bibendum ipsum dui, in convallis ipsum semper non. Sed maximus tempor purus nec ultricies. Nullam imperdiet, metus non luctus placerat, mi nunc vehicula ex, ut dapibus ante tellus vitae eros. Aliquam ut vehicula justo. Aenean in bibendum sapien. Vivamus eleifend nisi ut felis pretium laoreet. In eu enim elementum lectus egestas consectetur. Proin nisi est, elementum tincidunt auctor non, euismod vel quam. Nulla porttitor faucibus magna eu fringilla. Ut quis libero suscipit erat iaculis auctor eu quis quam.</p>
+                <p>Aenean ultrices non ex eget imperdiet. Praesent bibendum ultrices elementum. Aenean nunc sapien, dapibus id ex a, viverra rutrum dolor. Nunc nec feugiat massa, sed luctus ligula. Nulla ultricies nunc id leo posuere iaculis. Vivamus vitae aliquet neque, a aliquam leo. Nunc molestie lorem iaculis augue ornare, sit amet varius massa porttitor. Etiam eu semper augue. Ut ornare maximus lacus, nec maximus arcu blandit nec. Quisque malesuada, dolor sed tempor fringilla, arcu libero cursus elit, tincidunt pellentesque ante arcu sit amet nisi. Integer rhoncus tortor nec purus congue semper.</p>
+                <p>Vestibulum sed sem vitae ante vulputate auctor non vel nibh. Phasellus consectetur, quam quis iaculis suscipit, augue eros dictum ex, at pharetra ligula libero ut purus. Nulla in mi id ex fermentum sollicitudin vel ut lacus. Fusce at commodo orci. Aenean in quam tempus, commodo nisi eu, efficitur nulla. Donec consequat quam a ante sodales, vitae venenatis nulla luctus. Phasellus ornare metus massa, ut commodo lorem iaculis euismod. Sed eget lacus quis neque euismod vestibulum. Morbi tellus ante, maximus in iaculis in, fermentum at ligula. Donec sed velit vel nisl tincidunt mattis. Fusce tristique leo non enim lacinia rutrum. Vestibulum blandit sapien quis ipsum lobortis faucibus vitae vel massa.</p>
+                <p>Donec nec tempor dui. Duis sit amet lacus condimentum, laoreet turpis eget, blandit elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut dui orci, consectetur ac lacinia vel, finibus nec nibh. Quisque at dolor ac elit dignissim vulputate et et quam. Cras auctor lorem a sem suscipit ultricies. Ut dictum tortor dolor, nec rutrum lectus porttitor eu. Aenean convallis, velit in vestibulum rhoncus, magna est aliquam justo, vitae hendrerit urna nisi hendrerit ipsum. Sed pretium metus non fringilla vulputate. Fusce in magna dui. Cras facilisis molestie est eget ultrices. In aliquam vel risus eu cursus. Praesent faucibus turpis at turpis faucibus ultricies. Proin nec est tincidunt, finibus nulla quis, maximus lectus. Integer eleifend nunc quis magna laoreet, vel pharetra massa condimentum. Cras ac nisi lectus.</p>
+                <p>Quisque porta augue sed egestas vulputate. Cras nunc enim, vulputate vel nisi sit amet, volutpat sagittis velit. Quisque vitae porta turpis. Proin non felis rutrum, vestibulum libero nec, efficitur lorem. Quisque aliquam tellus risus, molestie dictum ligula tincidunt id. Aliquam erat volutpat. Sed vitae iaculis quam. Etiam eget magna lobortis mi faucibus pellentesque vel sit amet felis. Duis euismod, erat eu molestie pretium, mauris purus congue sapien, eget gravida nulla mauris non sapien. Maecenas a nunc in mauris consectetur luctus. Aenean lobortis eu orci eget hendrerit. Quisque malesuada felis libero, eu malesuada sapien porttitor ornare. Pellentesque euismod nunc ac risus fringilla lobortis.</p>
+      				</div>
+      			</div>
+      </div>
+	   </div>
+
+
+     <div #loja class="none" ><app-feedproduct></app-feedproduct></div>
     </div>
-</div>
-      <app-gridlist></app-gridlist>
+      
+	
+      
   </div>
   
   <div class="menu-right">
@@ -1454,9 +1634,10 @@ img.single-story-bg {
 			<section id="content1" class="tab-content">
                                  <div
                                     class="panel-body">
-                                    <textarea class="form-control" rows="2" placeholder="What are you thinking?"></textarea>
+                                    <textarea class="form-control1" rows="2" placeholder="What are you thinking?"
+                                    for="texto" id="texto" [(ngModel)]="texto" name="texto"></textarea>
                                     <div
-                                       class="mar-top clearfix"> <button
+                                       class="mar-top clearfix"> <button (click)="PostText();"
                                        class="btn btn-sm btn-primary pull-right" type="submit"><i
                                        class="fa fa-pencil fa-fw"></i> Share</button> <a
                                        class="btn btn-trans btn-icon fa fa-video-camera add-tooltip" href="#" data-original-title="Add Video" data-toggle="tooltip"></a> <a
@@ -1467,16 +1648,54 @@ img.single-story-bg {
 			</section>
 
 			<section id="content2" class="tab-content">
-				<h3>Headline 2</h3>
-		      	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		      	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		      	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-		      	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		      	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		      	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		      	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		      	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		      	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				 <form class="form-horizontal" role="form">
+									
+					<ngx-dropzone (change)="onSelect($event)">
+						<ngx-dropzone-label>Drop it, baby!</ngx-dropzone-label>
+						<ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f">
+						  <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+						</ngx-dropzone-image-preview>
+					</ngx-dropzone>
+                    <a>Legenda:</a>
+                     <div class="panel-body">
+                                    <textarea class="form-control" rows="5" placeholder=""
+                                    for="texto" id="texto" [(ngModel)]="descricao" name="texto"></textarea>
+                      </div>
+                      <a>Hastags:</a>
+                      <div class="panel-body">
+                                    <textarea class="form-control" rows="1" placeholder=""
+                                    for="texto" id="texto" [(ngModel)]="descricao" name="texto"></textarea>
+                      </div>
+                     <div
+                        class="form-group">
+                        <a>Localização</a>
+                        <div
+                           class="col-lg-8">
+                           <div
+                              class="ui-select">
+                              <select
+                                 id="user_time_zone" class="form-control">
+                                 <option
+                                    value="Hawaii">(GMT-10:00) Hawaii</option>
+                                 <option
+                                    value="Alaska">(GMT-09:00) Alaska</option>
+                                 <option
+                                    value="Pacific Time (US &amp; Canada)">(GMT-08:00) Pacific Time (US &amp; Canada)</option>
+                                 <option
+                                    value="Arizona">(GMT-07:00) Arizona</option>
+                                 <option
+                                    value="Mountain Time (US &amp; Canada)">(GMT-07:00) Mountain Time (US &amp; Canada)</option>
+                                 <option
+                                    value="Central Time (US &amp; Canada)" selected="selected">(GMT-06:00) Central Time (US &amp; Canada)</option>
+                                 <option
+                                    value="Eastern Time (US &amp; Canada)">(GMT-05:00) Eastern Time (US &amp; Canada)</option>
+                                 <option
+                                    value="Indiana (East)">(GMT-05:00) Indiana (East)</option>
+                              </select>
+                           </div>
+                        </div>
+                     </div>
+                  </form>
 			</section>
 
 			<section id="content3" class="tab-content">
@@ -1496,31 +1715,105 @@ img.single-story-bg {
 			</section>
 
 			<section id="content4" class="tab-content">
-				<h3>Headline 4</h3>
-		      	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		      	tempor incididunt ut labore et dolore magna aliqua.</p>
-		      	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		      	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		      	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		      	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		      	cillum dolore eu fugiat nulla pariatur.</p>
-		      	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		      	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		      	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		      	consequat.</p>
+				<form class="form-horizontal" role="form">
+									
+					<ngx-dropzone (change)="onSelect($event)">
+						<ngx-dropzone-label>Drop it, baby!</ngx-dropzone-label>
+						<ngx-dropzone-video-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f">
+						  <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+						</ngx-dropzone-video-preview>
+					</ngx-dropzone>
+                    <a>Legenda:</a>
+                     <div class="panel-body">
+                                    <textarea class="form-control" rows="5" placeholder=""
+                                    for="texto" id="texto" [(ngModel)]="descricao" name="texto"></textarea>
+                      </div>
+                      <a>Hastags:</a>
+                      <div class="panel-body">
+                                    <textarea class="form-control" rows="1" placeholder=""
+                                    for="texto" id="texto" [(ngModel)]="descricao" name="texto"></textarea>
+                      </div>
+                     <div
+                        class="form-group">
+                        <a>Localização</a>
+                        <div
+                           class="col-lg-8">
+                           <div
+                              class="ui-select">
+                              <select
+                                 id="user_time_zone" class="form-control">
+                                 <option
+                                    value="Hawaii">(GMT-10:00) Hawaii</option>
+                                 <option
+                                    value="Alaska">(GMT-09:00) Alaska</option>
+                                 <option
+                                    value="Pacific Time (US &amp; Canada)">(GMT-08:00) Pacific Time (US &amp; Canada)</option>
+                                 <option
+                                    value="Arizona">(GMT-07:00) Arizona</option>
+                                 <option
+                                    value="Mountain Time (US &amp; Canada)">(GMT-07:00) Mountain Time (US &amp; Canada)</option>
+                                 <option
+                                    value="Central Time (US &amp; Canada)" selected="selected">(GMT-06:00) Central Time (US &amp; Canada)</option>
+                                 <option
+                                    value="Eastern Time (US &amp; Canada)">(GMT-05:00) Eastern Time (US &amp; Canada)</option>
+                                 <option
+                                    value="Indiana (East)">(GMT-05:00) Indiana (East)</option>
+                              </select>
+                           </div>
+                        </div>
+                     </div>
+                  </form>
 			</section>
 
 			<section id="content5" class="tab-content">
-				<h3>Headline 5</h3>
-		      	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		      	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		      	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-		      	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		      	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		      	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		      	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		      	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		      	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<form class="form-horizontal" role="form">
+									
+					<ngx-dropzone (change)="onSelect($event)">
+						<ngx-dropzone-label>Drop it, baby!</ngx-dropzone-label>
+						<ngx-dropzone-video-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f">
+						  <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+						</ngx-dropzone-video-preview>
+					</ngx-dropzone>
+                    <a>Legenda:</a>
+                     <div class="panel-body">
+                                    <textarea class="form-control" rows="5" placeholder=""
+                                    for="texto" id="texto" [(ngModel)]="descricao" name="texto"></textarea>
+                      </div>
+                      <a>Hastags:</a>
+                      <div class="panel-body">
+                                    <textarea class="form-control" rows="1" placeholder=""
+                                    for="texto" id="texto" [(ngModel)]="descricao" name="texto"></textarea>
+                      </div>
+                     <div
+                        class="form-group">
+                        <a>Localização</a>
+                        <div
+                           class="col-lg-8">
+                           <div
+                              class="ui-select">
+                              <select
+                                 id="user_time_zone" class="form-control">
+                                 <option
+                                    value="Hawaii">(GMT-10:00) Hawaii</option>
+                                 <option
+                                    value="Alaska">(GMT-09:00) Alaska</option>
+                                 <option
+                                    value="Pacific Time (US &amp; Canada)">(GMT-08:00) Pacific Time (US &amp; Canada)</option>
+                                 <option
+                                    value="Arizona">(GMT-07:00) Arizona</option>
+                                 <option
+                                    value="Mountain Time (US &amp; Canada)">(GMT-07:00) Mountain Time (US &amp; Canada)</option>
+                                 <option
+                                    value="Central Time (US &amp; Canada)" selected="selected">(GMT-06:00) Central Time (US &amp; Canada)</option>
+                                 <option
+                                    value="Eastern Time (US &amp; Canada)">(GMT-05:00) Eastern Time (US &amp; Canada)</option>
+                                 <option
+                                    value="Indiana (East)">(GMT-05:00) Indiana (East)</option>
+                              </select>
+                           </div>
+                        </div>
+                     </div>
+                  </form>
 			</section>
 		</div>
 
@@ -1653,6 +1946,21 @@ label .fa {
 }
 .link {
   text-align:center;
+}
+.form-control1 {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    height: 226px;
+    padding: 0.875rem 0.75rem;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: #000;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
              </style>
          

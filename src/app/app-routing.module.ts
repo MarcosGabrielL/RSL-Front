@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/security/login/login.component';
 import { IndexComponent } from './components/views/index/index.component';
 import { HttpInterceptorService } from './components/security/httpinterceptor.service';
+import { FeedimagesComponent } from './components/views/feedimages/feedimages.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -15,6 +16,10 @@ const routes: Routes = [
         path: 'index',
         component: IndexComponent,
     canActivate: [ HttpInterceptorService ]
+    },
+    {
+        path: 'perfil',
+        component: FeedimagesComponent
     }
 ];
 

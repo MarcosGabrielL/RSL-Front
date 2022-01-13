@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {  Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+
+import { NgxDropzoneModule } from 'ngx-dropzone';
 
 @Component({
   selector: 'app-index',
@@ -9,6 +11,12 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 })
 export class IndexComponent implements OnInit {
   closeResult = '';
+ texto: string = "";
+ descricao: string = "";
+
+files: File[] = [];
+
+
 
   constructor(private modalService: NgbModal) {}
 
@@ -29,7 +37,21 @@ export class IndexComponent implements OnInit {
       return `with: ${reason}`;
     }
 }
+
   ngOnInit(): void {
   }
+
+	public PostText(){
+	}
+
+onSelect(event : any) {
+  console.log(event);
+  this.files.push(...event.addedFiles);
+}
+
+onRemove(event: any) {
+  console.log(event);
+  this.files.splice(this.files.indexOf(event), 1);
+}
 
 }
