@@ -55,12 +55,12 @@ export class PostTextaoService {
 
 	getTempoDecorrido(horacomentad?: string): Observable<string> {
 		
-		 const url = `https://asa-moviedb-front.herokuapp.com/comentarios/util/TempoDecorrido/${horacomentad}`
+		 const url = `${this.baseUrlPost}/util/TempoDecorrido/${horacomentad}`
         return this.http.get(url, { responseType: 'text' })
 	}
 
 	getHoraServidor(): Observable<string> {
-		 const url = `https://asa-moviedb-front.herokuapp.com/comentarios/util/HoraServidor`
+		 const url = `${this.baseUrlPost}/util/HoraServidor`
         return this.http.get(url, { responseType: 'text' })
 	}
 
