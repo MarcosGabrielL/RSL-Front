@@ -162,8 +162,8 @@ onRemove(event: any) {
                         //Pega usuario pelo email
                         this.userservice.getByEmail(this.email).subscribe((resposta: User) => {
                            // this.usuario = resposta;
-                            console.log(this.usuario.id);
-                            this.idperson = this.usuario.id.toString();
+                            console.log(resposta.id);
+                            this.idperson = resposta.id.toString();
                             //console.log(resposta);
 
                                 //Pega cinefilo pelo id do usuario	
@@ -191,7 +191,7 @@ onRemove(event: any) {
                 this.posttextaoservice.mensagem("Post criado com sucesso!");
                
             }, () => {
-                this.posttextaoservice.mensagem("Erro ao criar comentario!");
+                this.posttextaoservice.mensagem("Erro ao Postar!");
              }); 
                }); 
 

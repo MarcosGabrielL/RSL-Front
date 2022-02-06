@@ -20,29 +20,29 @@ export class PostTextaoService {
  constructor(private http: HttpClient, private _snack: MatSnackBar) { }
 
 
-     getPostByIdPerson(idcinefilo: string): Observable<Posttext[]> {
-        const url = `${this.baseUrlPost}/comentarios/cinefilo/`.concat(idcinefilo);
+     getPostTextaoByIdPerson(idperson: string): Observable<Posttext[]> {
+        const url = `${this.baseUrlPost}/textoes/textaoperson/`.concat(idperson);
         return this.http.get<Posttext[]>(url)
     }
   
-    findById(id: number): Observable<Posttext> {
-        const url = `${this.baseUrlPost}/comentarios/comentario/${id}`
+    findById(id: string): Observable<Posttext> {
+        const url = `${this.baseUrlPost}/textoes/textao/${id}`
         return this.http.get<Posttext>(url)
     }
 
     create(posttext: Posttext): Observable<Posttext>{
-        const url = `${this.baseUrlPost}/comentarios/comentario/add/${posttext.idperson}`
+        const url = `${this.baseUrlPost}/textoes/textao/add/${posttext.idperson}`
         return this.http.post<Posttext>(url, posttext);
     }
   
     delete(id: String):Observable<void> {
-        const url = `${this.baseUrlPost}/comentarios/comentario/movie/{idmovie}/update/${id}`
+        const url = `${this.baseUrlPost}/textoes/delete/${id}`
         return this.http.delete<void>(url)
     }
 
-  update(comentario: Posttext ):Observable<void> {
-    const url = `${this.baseUrlPost}/comentarios/comentario/delete/${comentario.id}`
-    return this.http.put<void>(url, comentario)
+  update(posttext: Posttext ):Observable<void> {
+    const url = `${this.baseUrlPost}/textoes/update/${posttext.idperson}`
+    return this.http.put<void>(url, posttext)
   }
   
   mensagem(str: String): void {
@@ -55,12 +55,12 @@ export class PostTextaoService {
 
 	getTempoDecorrido(horacomentad?: string): Observable<string> {
 		
-		 const url = `${this.baseUrl}/comentarios/util/TempoDecorrido/${horacomentad}`
+		 const url = `https://asa-moviedb-front.herokuapp.com/comentarios/util/TempoDecorrido/${horacomentad}`
         return this.http.get(url, { responseType: 'text' })
 	}
 
 	getHoraServidor(): Observable<string> {
-		 const url = `${this.baseUrl}/comentarios/util/HoraServidor`
+		 const url = `https://asa-moviedb-front.herokuapp.com/comentarios/util/HoraServidor`
         return this.http.get(url, { responseType: 'text' })
 	}
 
