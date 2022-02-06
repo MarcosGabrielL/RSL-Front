@@ -3,12 +3,13 @@ import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Post } from './post.model';
+import { Posttext } from './sub-post.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class PostService {
+export class PostTextaoService {
+
 
  baseUrl: String = environment.baseUrl;
  baseUrlPost : String = environment.baseUrlPost;
@@ -16,22 +17,22 @@ export class PostService {
   public username: string = "";
   public password: string = "";
 
-  constructor(private http: HttpClient, private _snack: MatSnackBar) { }
+ constructor(private http: HttpClient, private _snack: MatSnackBar) { }
 
 
-     getPostByIdPerson(idcinefilo: string): Observable<Post[]> {
+     getPostByIdPerson(idcinefilo: string): Observable<Posttext[]> {
         const url = `${this.baseUrlPost}/comentarios/cinefilo/`.concat(idcinefilo);
-        return this.http.get<Post[]>(url)
+        return this.http.get<Posttext[]>(url)
     }
   
-    findById(id: number): Observable<Post> {
+    findById(id: number): Observable<Posttext> {
         const url = `${this.baseUrlPost}/comentarios/comentario/${id}`
-        return this.http.get<Post>(url)
+        return this.http.get<Posttext>(url)
     }
 
-    create(comentario: Post, idmovie : string ): Observable<Post>{
-        const url = `${this.baseUrlPost}/comentarios/comentario/add/${idmovie}`
-        return this.http.post<Post>(url, comentario);
+    create(posttext: Posttext): Observable<Posttext>{
+        const url = `${this.baseUrlPost}/comentarios/comentario/add/${posttext.idperson}`
+        return this.http.post<Posttext>(url, posttext);
     }
   
     delete(id: String):Observable<void> {
@@ -39,7 +40,7 @@ export class PostService {
         return this.http.delete<void>(url)
     }
 
-  update(comentario: Post ):Observable<void> {
+  update(comentario: Posttext ):Observable<void> {
     const url = `${this.baseUrlPost}/comentarios/comentario/delete/${comentario.id}`
     return this.http.put<void>(url, comentario)
   }
@@ -64,3 +65,4 @@ export class PostService {
 	}
 
 }
+                                                                                                                                             

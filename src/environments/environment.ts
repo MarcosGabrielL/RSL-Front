@@ -4,7 +4,8 @@
 
 export const environment = {
     production: false,
-   baseUrl : 'https://integralsocialnetwork-beckend.herokuapp.com'
+   baseUrl : 'https://integralsocialnetwork-beckend.herokuapp.com',
+   baseUrlPost : 'https://spoke-service-post.herokuapp.com'
 };
 
 /*
