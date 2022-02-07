@@ -258,7 +258,7 @@ onRemove(event: any) {
 
                         this.files.forEach( (file) => {
 
-                              this.postservice.UploadFiles(file, result.idperson).subscribe((result: FileDB)=> {
+                              this.postservice.UploadFiles(file, result.idperson).subscribe((result: any)=> {
                               
                                   this.postimagemservice.mensagem("Post criado com sucesso!");
                              

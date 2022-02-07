@@ -21,7 +21,7 @@ export class PostService {
   constructor(private http: HttpClient, private _snack: MatSnackBar) { }
 
 
-    UploadFiles(file : File, idpost : string ): Observable<HttpEvent<any>>{
+    UploadFiles(file : File, idpost : string ): Observable<Object>{
       console.log(file);
 
         var fd = new FormData();
