@@ -194,9 +194,10 @@ onRemove(event: any) {
                 console.log(this.posttext);
                 //Salva Post
             this.posttextaoservice.create( this.posttext).subscribe((result)=> {
+                 this.getDismissReason("");
                 console.log('Criado');
                 this.posttextaoservice.mensagem("Post criado com sucesso!");
-                this.getDismissReason("");
+               
                
             }, () => {
                 this.posttextaoservice.mensagem("Erro ao Postar!");
@@ -253,7 +254,7 @@ onRemove(event: any) {
                 //Salva Post
     if(this.files.length > 0){
             this.postimagemservice.create(this.postimagem).subscribe((result: Postimagem)=> {
-                  console.log(result);
+                  console.log('post creado' + result);
 
                         this.files.forEach( (file) => {
 
