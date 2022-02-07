@@ -30,6 +30,10 @@ export class PostService {
         /** In Angular 5, including the header Content-Type can invalidate your request */
         headers.append('Content-Type', 'multipart/form-data');
         headers.append('Accept', 'application/json');
+
+         const options = {
+  headers: headers
+  };
         let options = new RequestOptions({ headers: headers });
 
         const url = `${this.baseUrlPost}/imagens/imagem/add/${idpost}`
