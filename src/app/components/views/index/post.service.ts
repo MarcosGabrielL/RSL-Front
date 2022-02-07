@@ -28,7 +28,9 @@ export class PostService {
         let headers = new Headers();
         headers.append('Content-Type', 'multipart/form-data');
         headers.append('Accept', 'application/json');
-        let options = new RequestOptions({ headers: headers });
+
+         let options = { headers: headers};
+
         const url = `${this.baseUrlPost}/imagens/imagem/add/${idpost}`
         return this.http.post<FileDB>(url, formData, options);
     }
