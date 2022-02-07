@@ -1,10 +1,11 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Post } from './post.model';
 import { FileDB } from './post.model';
+import { HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -25,20 +26,9 @@ export class PostService {
 
       let formData:FormData = new FormData();
         formData.append('uploadFile', file, file.name);
-        let headers = new Headers();
-        headers.append('Content-Type', 'multipart/form-data');
-        headers.append('Accept', 'application/json');
-
-         let options = { headers: headers};
-
+        
         const url = `${this.baseUrlPost}/imagens/imagem/add/${idpost}`
-        return this.http.post(url, formData, options)
-            .map(res => res.json())
-            .catch(error => Observable.throw(error))
-            .subscribe(
-                data => console.log('success'),
-                error => console.log(error)
-            )
+        return this.http.post<FileDB>(url, formData);
     }
   
   mensagem(str: String): void {
