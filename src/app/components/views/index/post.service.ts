@@ -24,16 +24,17 @@ export class PostService {
     UploadFiles(file : File, idpost : string ): Observable<Object>{
       console.log(file);
 
-        var fd = new FormData();
-        fd.append('file', file);
-        
-      
+ let formData:FormData = new FormData();
+        formData.append('uploadFile', file, file.name);
+        let headers = new Headers();
+        /** In Angular 5, including the header Content-Type can invalidate your request */
+        headers.append('Content-Type', 'multipart/form-data');
+        headers.append('Accept', 'application/json');
+        let options = new RequestOptions({ headers: headers });
+
         const url = `${this.baseUrlPost}/imagens/imagem/add/${idpost}`
 
-        return this.http.post(url, fd, {
-
-            headers: {'Content-Type': 'multipart/form-data'}
-        });
+        return this.http.post(url, formData, options);
     }
   
   mensagem(str: String): void {
