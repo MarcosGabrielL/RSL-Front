@@ -32,7 +32,13 @@ export class PostService {
          let options = { headers: headers};
 
         const url = `${this.baseUrlPost}/imagens/imagem/add/${idpost}`
-        return this.http.post<FileDB>(url, formData, options);
+        return this.http.post(url, formData, options)
+            .map(res => res.json())
+            .catch(error => Observable.throw(error))
+            .subscribe(
+                data => console.log('success'),
+                error => console.log(error)
+            )
     }
   
   mensagem(str: String): void {
