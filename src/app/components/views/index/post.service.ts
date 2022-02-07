@@ -21,23 +21,14 @@ export class PostService {
   constructor(private http: HttpClient, private _snack: MatSnackBar) { }
 
 
-    UploadFiles(file : File, idpost : string ): Observable<Object>{
+    UploadFiles(file : FileDB, idpost : string ): Observable<FileDB>{
       console.log(file);
 
-        let formParams = new FormData();
-       formParams.append('file', file)
-       formParams.append('body', new Blob([JSON.stringify(idpost)], { type: 'text/plain' }));
-             
-             const options = {
-               headers: new HttpHeaders({
-                  'Content-Type': 'multipart/form-data',
-                  'Accept': 'application/json'
-                  })
-                };
+       
 
         const url = `${this.baseUrlPost}/imagens/imagem/add/${idpost}`
 
-        return this.http.post(url, formParams, options);
+        return this.http.post<FileDB>(url, file);
     }
   
   mensagem(str: String): void {

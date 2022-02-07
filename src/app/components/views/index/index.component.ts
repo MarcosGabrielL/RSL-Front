@@ -256,7 +256,13 @@ onRemove(event: any) {
             this.postimagemservice.create(this.postimagem).subscribe((result: Postimagem)=> {
                   console.log('post creado' + result);
 
-                        this.files.forEach( (file) => {
+                        this.files.forEach( (a) => {
+
+                          file_db : any ={ "id": "0",
+                                             "name": a.name; 
+                                             "type": a.type;
+                                             "data": ""File[]"";
+                                             "idpost": result.idpost};
 
                               this.postservice.UploadFiles(file, result.idperson).subscribe((result: any)=> {
                               
