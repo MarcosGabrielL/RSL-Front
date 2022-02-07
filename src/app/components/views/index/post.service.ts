@@ -33,7 +33,7 @@ export class PostService {
 
          const options = {
            headers: new HttpHeaders({
-              'Content-Type', 'multipart/form-data'
+              'Content-Type': 'multipart/form-data'
               })
             };
 
