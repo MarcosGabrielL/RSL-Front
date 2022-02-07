@@ -24,12 +24,9 @@ export class PostService {
     UploadFiles(file : File, idpost : string ): Observable<Object>{
       console.log(file);
 
- let formData:FormData = new FormData();
-        formData.append('uploadFile', file, file.name);
-        let headers = new Headers();
-        /** In Angular 5, including the header Content-Type can invalidate your request */
-        headers.append('Content-Type', 'multipart/form-data');
-        headers.append('Accept', 'application/json');
+        let formParams = new FormData();
+   formParams.append('file', file)
+        formParams.append('idpost', idpost)
 
          const options = {
            headers: new HttpHeaders({
