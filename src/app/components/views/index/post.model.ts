@@ -9,3 +9,14 @@ export interface Post{
                              hastags: string;
                              local: string;
 }
+
+export interface FileDB{
+	
+	 id: string;
+	 name: string; 
+	 type: string;
+	 data: File[];
+	 idpost: string;
+
+}
+

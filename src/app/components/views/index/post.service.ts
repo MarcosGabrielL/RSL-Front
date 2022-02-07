@@ -4,6 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Post } from './post.model';
+import { FileDB } from './post.model';
 
 @Injectable({
   providedIn: 'root'
@@ -19,30 +20,10 @@ export class PostService {
   constructor(private http: HttpClient, private _snack: MatSnackBar) { }
 
 
-     getPostByIdPerson(idcinefilo: string): Observable<Post[]> {
-        const url = `${this.baseUrlPost}/comentarios/cinefilo/`.concat(idcinefilo);
-        return this.http.get<Post[]>(url)
+    UploadFiles(files : File, idpost : string ): Observable<FileDB>{
+        const url = `${this.baseUrlPost}/imagens/imagem/add/${idpost}`
+        return this.http.post<FileDB>(url, files);
     }
-  
-    findById(id: number): Observable<Post> {
-        const url = `${this.baseUrlPost}/comentarios/comentario/${id}`
-        return this.http.get<Post>(url)
-    }
-
-    create(comentario: Post, idmovie : string ): Observable<Post>{
-        const url = `${this.baseUrlPost}/comentarios/comentario/add/${idmovie}`
-        return this.http.post<Post>(url, comentario);
-    }
-  
-    delete(id: String):Observable<void> {
-        const url = `${this.baseUrlPost}/comentarios/comentario/movie/{idmovie}/update/${id}`
-        return this.http.delete<void>(url)
-    }
-
-  update(comentario: Post ):Observable<void> {
-    const url = `${this.baseUrlPost}/comentarios/comentario/delete/${comentario.id}`
-    return this.http.put<void>(url, comentario)
-  }
   
   mensagem(str: String): void {
     this._snack.open(`${str}`, 'OK', {

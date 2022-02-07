@@ -5,7 +5,11 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { NgxDropzoneModule } from 'ngx-dropzone';
 
 import { Posttext } from './postsservices/sub-post.model';
+import { Postimagem } from './postsservices/sub-post.model';
 import { PostTextaoService  } from './postsservices/post-textao.service';
+import { PostImagemService  } from './postsservices/post-imagem.service';
+import { PostService  } from './post.service';
+import { FileDB } from './post.model';
 
 import { LoginService } from './../../security/login.service';
 import { UserService } from '../profilesetting/user.service';
@@ -113,7 +117,9 @@ usuario: User = {"id": 0, "email": "", "password": "","firstName":"", "lastName"
   constructor(private modalService: NgbModal,
   private authenticationService: LoginService,
   private userservice : UserService,
-  private posttextaoservice : PostTextaoService) {}
+  private posttextaoservice : PostTextaoService,
+  private postimagemservice : PostImagemService,
+  private postservice : PostService) {}
 
   open(content: any) {
     this.modalService.open(content, { size: 'lg' }).result.then((result) => {
@@ -200,6 +206,72 @@ onRemove(event: any) {
 	}
 
 	public PostImagem(){
+
+           //Pega data formatada
+    this.posttextaoservice.getHoraServidor().subscribe((resposta: string) => {
+      this.hora = resposta;
+      console.log(resposta);
+     }); 
+            
+            //Pega id inefilo e Verifica se está logado
+                if(this.authenticationService.isUserLoggedIn()){
+                    //Pega email do usuario logado
+                    this.email = this.authenticationService.getLoggedInUserName();
+                        //Pega usuario pelo email
+                        this.userservice.getByEmail(this.email).subscribe((resposta: User) => {
+                           // this.usuario = resposta;
+                            console.log(resposta.id);
+                            this.idperson = resposta.id.toString();
+                            //console.log(resposta);
+
+                                //Pega cinefilo pelo id do usuario  
+                                //this.cinefiloservice.findById(this.usuario.id).subscribe((resposta) => {
+                                  //      console.log(resposta);
+                                    //    this.cinefilo = Object.values(resposta);
+                                      //  console.log(this.cinefilo);
+                                //});
+                   
+
+            
+
+           //Peva valores do form e envia
+            this.postimagem= {"id": 0,
+                            "idperson": this.idperson,
+                            "texto": this.texto,
+                            "idimagem": "",
+                            "email": this.email,
+                            "tipo": "1",
+                             "hora": this.hora,
+                             "hastags": "",
+                             "local": "",
+                             "description": ""};
+            
+                           
+                console.log(this.postimagem);
+                //Salva Post
+    if(this.files.length > 0){
+            this.postimagemservice.create(this.postimagem).subscribe((result: Postimagem)=> {
+                  console.log(result);
+
+                        this.files.forEach( (file) => {
+
+                              this.postservice.UploadFiles(file, result.idperson).subscribe((result: FileDB)=> {
+                              
+                                  this.postimagemservice.mensagem("Post criado com sucesso!");
+                             
+                             }, () => {
+                                  this.postimagemservice.mensagem("Erro ao Postar!");
+                              }); 
+                          });
+
+            }, () => {
+                this.postimagemservice.mensagem("Erro ao Postar!");
+             }); 
+
+             }
+               }); 
+
+                }
 	}
 
 	public PostReels(){
