@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Post } from './post.model';
 import { FileDB } from './post.model';
-import { HttpHeaders } from '@angular/common/http';
+import { HttpHeaders, HttpEvent } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
