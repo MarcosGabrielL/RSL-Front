@@ -24,9 +24,21 @@ export class PostService {
     UploadFiles(file : File, idpost : string ): Observable<FileDB>{
       console.log(file);
 
+        var fd = new FormData();
+        fd.append('file', file);
+        
       
         const url = `${this.baseUrlPost}/imagens/imagem/add/${idpost}`
-        return this.http.post<FileDB>(url, file);
+        
+        return this.http.post(url, fd, {
+
+            transformRequest: angular.identity,
+            headers: {'Content-Type': 'multipart/form-data'}
+        })
+        .success(function(){
+        })
+        .error(function(){
+        });
     }
   
   mensagem(str: String): void {
