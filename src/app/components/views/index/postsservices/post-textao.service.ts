@@ -31,7 +31,7 @@ export class PostTextaoService {
     }
 
     create(posttext: Posttext): Observable<Posttext>{
-        const url = `${this.baseUrlPost}/textoes/textao/add/${posttext.idperson}`
+        const url = `${this.baseUrlPost}/textoes/textao/add`
         return this.http.post<Posttext>(url, posttext);
     }
   
