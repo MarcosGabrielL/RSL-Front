@@ -34,7 +34,6 @@ export class PostService {
          const options = {
   headers: headers
   };
-        let options = new RequestOptions({ headers: headers });
 
         const url = `${this.baseUrlPost}/imagens/imagem/add/${idpost}`
 
