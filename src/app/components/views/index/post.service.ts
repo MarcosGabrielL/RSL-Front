@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
@@ -21,7 +21,7 @@ export class PostService {
 
 
     UploadFiles(file : File, idpost : string ): Observable<FileDB>{
-      console.log(files);
+      console.log(file);
 
       let formData:FormData = new FormData();
         formData.append('uploadFile', file, file.name);
