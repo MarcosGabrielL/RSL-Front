@@ -26,7 +26,7 @@ export class PostService {
 
         let formParams = new FormData();
        formParams.append('file', file)
-       formDate.append('body', new Blob([JSON.stringfy(idpost)], { type: 'text/plain' }));
+       formParams.append('body', new Blob([JSON.stringify(idpost)], { type: 'text/plain' }));
              
              const options = {
                headers: new HttpHeaders({
