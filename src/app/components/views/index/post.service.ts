@@ -32,8 +32,10 @@ export class PostService {
         headers.append('Accept', 'application/json');
 
          const options = {
-  headers: headers
-  };
+           headers: new HttpHeaders({
+              'Content-Type', 'multipart/form-data'
+              })
+            };
 
         const url = `${this.baseUrlPost}/imagens/imagem/add/${idpost}`
 
