@@ -194,7 +194,9 @@ onRemove(event: any) {
                 console.log(this.posttext);
                 //Salva Post
             this.posttextaoservice.create( this.posttext).subscribe((result)=> {
+                console.log('Criado');
                 this.posttextaoservice.mensagem("Post criado com sucesso!");
+                getDismissReason("");
                
             }, () => {
                 this.posttextaoservice.mensagem("Erro ao Postar!");
