@@ -29,7 +29,7 @@ export class PostService {
 
         
         const url = `${this.baseUrlPost}/imagens/imagem/add/${idpost}`
-        return this.http.post(url,  file, {
+        return this.http.post<Object>(url,  file, {
         headers: {'Content-type': 'undefined', 'Expect': '100-continue'}});
     }
   
