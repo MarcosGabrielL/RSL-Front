@@ -34,7 +34,7 @@ export class PostService {
 
         const url = `${this.baseUrlPost}/imagens/imagem/add/${idpost}`
         return this.http.post(url,  formDate, {
-        headers: {'Content-type', 'undefined'}});
+        headers: {'Content-type': 'undefined'}});
     }
   
   mensagem(str: String): void {
