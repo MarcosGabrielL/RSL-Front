@@ -30,7 +30,7 @@ export class PostService {
         
         const url = `${this.baseUrlPost}/imagens/imagem/add/${idpost}`
         return this.http.post<Object>(url,  file, {
-        headers: {'Content-type': 'undefined', 'Expect': '100-continue'}});
+        headers: {'Content-type': 'undefined', 'Expect': '100-continue', 'Content-Length': '1234567890987'}});
     }
   
   mensagem(str: String): void {
