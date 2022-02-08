@@ -27,9 +27,14 @@ export class PostService {
 
     UploadFiles(file : File, idpost : string ): Observable<Object> {
 
-      
+        let formDate = new FormData();
+        formDate.append('file', file, file.name);
+
+
+
         const url = `${this.baseUrlPost}/imagens/imagem/add/${idpost}`
-        return this.http.post(url,  file)
+        return this.http.post(url,  formDate, {
+        headers: {'Content-type', 'undefined'}});
     }
   
   mensagem(str: String): void {
