@@ -18,12 +18,22 @@ export class PostService {
   public username: string = "";
   public password: string = "";
 
+
+
+
+
   constructor(private http: HttpClient, private _snack: MatSnackBar) { }
 
 
-    UploadFiles(files : File, idpost : string ): Observable<FileDB>{
+    UploadFiles(file : File, idpost : string ): Observable<Object> {
+
+        let formDate = new FormData();
+        formDate.append('file', file, file.name);
+
+
+
         const url = `${this.baseUrlPost}/imagens/imagem/add/${idpost}`
-        return this.http.post<FileDB>(url, files);
+        return this.http.post<Object>(url,  formDate)
     }
   
   mensagem(str: String): void {

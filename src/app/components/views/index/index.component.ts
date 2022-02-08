@@ -255,20 +255,22 @@ onRemove(event: any) {
             this.postimagemservice.create(this.postimagem).subscribe((result: Postimagem)=> {
                   console.log(result);
 
-                        this.files.forEach( (file) => {
-
-                              this.postservice.UploadFiles(file, result.idperson).subscribe((result: FileDB)=> {
-                              
-                                  this.postimagemservice.mensagem("Post criado com sucesso!");
-                             
-                             }, () => {
-                                  this.postimagemservice.mensagem("Erro ao Postar!");
-                              }); 
-                          });
+                       
 
             }, () => {
                 this.postimagemservice.mensagem("Erro ao Postar!");
              }); 
+
+             this.files.forEach( (file) => {
+
+                              this.postservice.UploadFiles( file, this.postimagem.idperson).subscribe((result: any)=> {
+                              console.log(result);
+                                  this.postimagemservice.mensagem("Post criado com sucesso!");
+                             
+                             }, (error: any) => {console.log(error);
+                                  this.postimagemservice.mensagem("Erro ao Postar!");
+                              }); 
+                          });
 
              }
                }); 
