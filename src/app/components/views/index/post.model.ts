@@ -15,7 +15,7 @@ export interface FileDB{
 	 id: string;
 	 name: string; 
 	 type: string;
-	 data: File[];
+	 data: File;
 	 idpost: string;
 
 }

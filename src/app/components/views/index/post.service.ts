@@ -21,14 +21,9 @@ export class PostService {
   constructor(private http: HttpClient, private _snack: MatSnackBar) { }
 
 
-    UploadFiles(file : FileDB, idpost : string ): Observable<FileDB>{
-      console.log(file);
-
-       
-
+    UploadFiles(files : File, idpost : string ): Observable<FileDB>{
         const url = `${this.baseUrlPost}/imagens/imagem/add/${idpost}`
-
-        return this.http.post<FileDB>(url, file);
+        return this.http.post<FileDB>(url, files);
     }
   
   mensagem(str: String): void {

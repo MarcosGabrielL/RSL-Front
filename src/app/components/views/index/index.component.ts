@@ -31,7 +31,7 @@ email: string = "";
 idperson: string = "";
 usuario: User = {"id": 0, "email": "", "password": "","firstName":"", "lastName":""}
 
-	 posttext: any = {"id": "",
+     posttext: any = {"id": "",
                             "idperson": "",
                             "texto": "",
                             "email": "",
@@ -153,13 +153,13 @@ onRemove(event: any) {
 }
 
 
-	public PostText(){
+    public PostText(){
 
             //Pega data formatada
-		this.posttextaoservice.getHoraServidor().subscribe((resposta: string) => {
-			this.hora = resposta;
-			console.log(resposta);
-		 }); 
+        this.posttextaoservice.getHoraServidor().subscribe((resposta: string) => {
+            this.hora = resposta;
+            console.log(resposta);
+         }); 
             
             //Pega id inefilo e Verifica se está logado
                 if(this.authenticationService.isUserLoggedIn()){
@@ -172,7 +172,7 @@ onRemove(event: any) {
                             this.idperson = resposta.id.toString();
                             //console.log(resposta);
 
-                                //Pega cinefilo pelo id do usuario	
+                                //Pega cinefilo pelo id do usuario  
                                 //this.cinefiloservice.findById(this.usuario.id).subscribe((resposta) => {
                                   //      console.log(resposta);
                                     //    this.cinefilo = Object.values(resposta);
@@ -194,10 +194,9 @@ onRemove(event: any) {
                 console.log(this.posttext);
                 //Salva Post
             this.posttextaoservice.create( this.posttext).subscribe((result)=> {
-                 this.getDismissReason("");
                 console.log('Criado');
                 this.posttextaoservice.mensagem("Post criado com sucesso!");
-               
+                this.getDismissReason("");
                
             }, () => {
                 this.posttextaoservice.mensagem("Erro ao Postar!");
@@ -206,9 +205,9 @@ onRemove(event: any) {
 
                 }
 
-	}
+    }
 
-	public PostImagem(){
+    public PostImagem(){
 
            //Pega data formatada
     this.posttextaoservice.getHoraServidor().subscribe((resposta: string) => {
@@ -254,17 +253,11 @@ onRemove(event: any) {
                 //Salva Post
     if(this.files.length > 0){
             this.postimagemservice.create(this.postimagem).subscribe((result: Postimagem)=> {
-                  console.log('post creado' + result);
+                  console.log(result);
 
-                        this.files.forEach( (a) => {
+                        this.files.forEach( (file) => {
 
-                          file_db : any ={ "id": "0",
-                                             "name": a.name; 
-                                             "type": a.type;
-                                             "data": ""File[]"";
-                                             "idpost": result.idpost};
-
-                              this.postservice.UploadFiles(file, result.idperson).subscribe((result: any)=> {
+                              this.postservice.UploadFiles(file, result.idperson).subscribe((result: FileDB)=> {
                               
                                   this.postimagemservice.mensagem("Post criado com sucesso!");
                              
@@ -281,17 +274,17 @@ onRemove(event: any) {
                }); 
 
                 }
-	}
+    }
 
-	public PostReels(){
-	}
+    public PostReels(){
+    }
 
-	public PostStories(){
-	}
+    public PostStories(){
+    }
 
-	public PostEnquete(){
-	}
+    public PostEnquete(){
+    }
 
-	public PostVideo(){
-	}
+    public PostVideo(){
+    }
 }
