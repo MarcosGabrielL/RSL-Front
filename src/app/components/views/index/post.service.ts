@@ -47,7 +47,7 @@ export class PostService {
         headers: {
                   'Access-Control-Allow-Origin': '*',
                   'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT',
-                    'Content-Type': 'multipart/form-data',
+                    'Content-Type': 'multipart/form-data; boundary=Inflow',
                     'enctype': "multipart/form-data",
                     'Accept': 'application/json' },
         params: params,
