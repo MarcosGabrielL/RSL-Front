@@ -30,31 +30,23 @@ export class PostService {
         const formDate: FormData = new FormData();
 
         formDate.append('file', file);
-       // console.log(file);
-
-         let params = new HttpParams();
-          params.append('idpost', idpost);
-
-        let g = {
-        "idpost": idpost,
-        "file": file
-
-      };
-
-
+        formDate.append('idpost', idpost);
+       
+        const options = {} as any;
+         
         const url = `${this.baseUrlPost}/imagens/imagem/add`
-        return this.http.post(url,  formDate, {
-        headers: {
+        return this.http.post(url,  formDate, options);
+
+
+        //Accept': 'application/json',
+        /* headers: {
                   'Access-Control-Allow-Origin': '*',
                   'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT',
                     'Content-Type': 'multipart/form-data; boundary=Inflow',
                     'enctype': "multipart/form-data",
                     'Accept': 'application/json' },
         params: params,
-        reportProgress: true});
-
-
-        //Accept': 'application/json',
+        reportProgress: true}*/
             
     }
   
