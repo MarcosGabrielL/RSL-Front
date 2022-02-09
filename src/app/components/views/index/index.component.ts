@@ -265,9 +265,11 @@ onRemove(event: any) {
 
                               this.postservice.UploadFiles( file, this.postimagem.idperson).subscribe((result: any)=> {
                               console.log(result);
+                              console.log('File UpLoaded');
                                   this.postimagemservice.mensagem("Post criado com sucesso!");
                              
                              }, (error: any) => {console.log(error);
+                                console.log('Erro Upload');
                                   this.postimagemservice.mensagem("Erro ao Postar!");
                               }); 
                           });
