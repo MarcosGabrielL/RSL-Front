@@ -34,11 +34,11 @@ export class PostService {
           const req = new HttpRequest('POST', `${this.baseUrlPost}/imagens/imagem/add/${idpost}`, formData, {
             reportProgress: true,
             responseType: 'json',
-            headers: {'Content-type': 'multipart/form-data'}
+            Content-type: 'multipart/form-data'
           });
           return this.http.request(req);
 
-       
+        
     }
   
   mensagem(str: String): void {
