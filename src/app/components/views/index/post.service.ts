@@ -35,7 +35,9 @@ export class PostService {
         const options = {} as any;
          
         const url = `${this.baseUrlPost}/imagens/imagem/add`
-        return this.http.post(url,  formDate, options);
+        return this.http.post(url,  formDate,{ headers: {
+                  "Accept": "text/plain",
+            'Content-Type', 'multipart/form-data' }});
 
 
         //Accept': 'application/json',
