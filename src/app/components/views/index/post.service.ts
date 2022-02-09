@@ -29,7 +29,7 @@ export class PostService {
 
         const formDate: FormData = new FormData();
 
-        formDate.append('file', file);
+        formDate.append('file', new Blob([JSON.stringify(file)],{type:'application/json'}));
         formDate.append('idpost', idpost);
        
         const options = {} as any;
