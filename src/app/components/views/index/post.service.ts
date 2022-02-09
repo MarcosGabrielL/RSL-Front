@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Post } from './post.model';
 import { FileDB } from './post.model';
-import { HttpHeaders, HttpEvent } from '@angular/common/http';
+import { HttpHeaders, HttpEvent, HttpRequest } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -25,16 +25,16 @@ export class PostService {
   constructor(private http: HttpClient, private _snack: MatSnackBar) { }
 
 
-    UploadFiles(file : File, idpost : string ): Observable<Object> {
+    UploadFiles(file : File, idpost : string ):  Observable<HttpEvent<any>> {
 
-        let formDate = new FormData();
-        formDate.append('file', file, file.name);
-        console.log('File: '+file);
+          const formData: FormData = new FormData();
+          formData.append('file', file);
 
-
-        const url = `${this.baseUrlPost}/imagens/imagem/add/${idpost}`
-        return this.http.post(url,  formDate, {
-        headers: {'Content-type': 'multipart/form-data', 'Expect': '100-continue', 'Content-Length': '1234567890987'}});
+          const req = new HttpRequest('POST', `${this.baseUrlPost}/imagens/imagem/add/${idpost}`, formData, {
+            reportProgress: true,
+            responseType: 'json'
+          });
+          return this.http.request(req);
     }
   
   mensagem(str: String): void {
