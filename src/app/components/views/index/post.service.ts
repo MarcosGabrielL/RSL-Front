@@ -29,6 +29,7 @@ export class PostService {
 
           const formData: FormData = new FormData();
           formData.append('file', file);
+          formData.append('idpost', idpost);
 
           const req = new HttpRequest('POST', `${this.baseUrlPost}/imagens/imagem/add/${idpost}`, formData, {
             reportProgress: true,
