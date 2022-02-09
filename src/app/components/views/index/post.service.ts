@@ -27,15 +27,18 @@ export class PostService {
 
     UploadFiles(file : File, idpost : string ):  Observable<HttpEvent<any>> {
 
-          const formData: FormData = new FormData();
+           const formData: FormData = new FormData();
           formData.append('file', file);
           formData.append('idpost', idpost);
 
           const req = new HttpRequest('POST', `${this.baseUrlPost}/imagens/imagem/add/${idpost}`, formData, {
             reportProgress: true,
-            responseType: 'json'
+            responseType: 'json',
+            headers: {'Content-type': 'multipart/form-data'}
           });
           return this.http.request(req);
+
+       
     }
   
   mensagem(str: String): void {
