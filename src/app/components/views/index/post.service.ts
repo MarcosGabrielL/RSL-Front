@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Post } from './post.model';
 import { FileDB } from './post.model';
-import { HttpHeaders, HttpEvent, HttpRequest } from '@angular/common/http';
+import { HttpHeaders, HttpEvent, HttpParams } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -25,20 +25,36 @@ export class PostService {
   constructor(private http: HttpClient, private _snack: MatSnackBar) { }
 
 
-    UploadFiles(file : File, idpost : string ):  Observable<HttpEvent<any>> {
+    UploadFiles(file : File, idpost : string ): Observable<Object> {
 
-           const formData: FormData = new FormData();
-          formData.append('file', file);
-          formData.append('idpost', idpost);
+        const formDate: FormData = new FormData();
 
-          const req = new HttpRequest('POST', `${this.baseUrlPost}/imagens/imagem/add/${idpost}`, formData, {
-            reportProgress: true,
-            responseType: 'json',
-            headers: {'Content-type': 'multipart/form-data'}
-          });
-          return this.http.request(req);
+        formDate.append('file', file);
+       // console.log(file);
 
+         let params = new HttpParams();
+          params.append('idpost', idpost);
+
+        let g = {
+        "idpost": idpost,
+        "file": file
+
+      };
+
+
+        const url = `${this.baseUrlPost}/imagens/imagem/add`
+        return this.http.post(url,  formDate, {
+        headers: {
+                  'Access-Control-Allow-Origin': '*',
+                  'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT',
+                    'Content-Type': 'multipart/form-data',
+                    'Accept': 'application/json' },
+        params: params,
+        reportProgress: true});
         
+
+        //Accept': 'application/json',
+            
     }
   
   mensagem(str: String): void {

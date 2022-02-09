@@ -253,17 +253,9 @@ onRemove(event: any) {
                 //Salva Post
     if(this.files.length > 0){
             this.postimagemservice.create(this.postimagem).subscribe((result: Postimagem)=> {
-                  console.log(result);
+                  console.log('Posted');
 
-                       
-
-            }, () => {
-                this.postimagemservice.mensagem("Erro ao Postar!");
-             }); 
-
-             this.files.forEach( (file) => {
-
-                              this.postservice.UploadFiles( file, this.postimagem.idperson).subscribe((result: any)=> {
+                        this.postservice.UploadFiles( this.files[0], this.postimagem.idperson).subscribe((result: any)=> {
                               console.log(result);
                               console.log('File UpLoaded');
                                   this.postimagemservice.mensagem("Post criado com sucesso!");
@@ -272,7 +264,15 @@ onRemove(event: any) {
                                 console.log('Erro Upload');
                                   this.postimagemservice.mensagem("Erro ao Postar!");
                               }); 
-                          });
+
+            }, () => {
+                this.postimagemservice.mensagem("Erro ao Postar!");
+             }); 
+
+            
+
+                             
+                         
 
              }
                }); 
