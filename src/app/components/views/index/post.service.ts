@@ -48,10 +48,11 @@ export class PostService {
                   'Access-Control-Allow-Origin': '*',
                   'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT',
                     'Content-Type': 'multipart/form-data',
+                    'enctype': "multipart/form-data",
                     'Accept': 'application/json' },
         params: params,
         reportProgress: true});
-        
+
 
         //Accept': 'application/json',
             
