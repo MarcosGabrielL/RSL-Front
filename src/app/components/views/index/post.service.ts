@@ -34,7 +34,7 @@ export class PostService {
           const req = new HttpRequest('POST', `${this.baseUrlPost}/imagens/imagem/add/${idpost}`, formData, {
             reportProgress: true,
             responseType: 'json',
-            Content-type: 'multipart/form-data'
+            headers: {'Content-type': 'multipart/form-data'}
           });
           return this.http.request(req);
 
