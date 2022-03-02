@@ -6,7 +6,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 RedeLivre é um  modelo de aplicativo web conceito de rede social integral completa com videos longos e curtos, storys, imagens, textos, enquetes, marketplace.
 
-<img src="https://i.ibb.co/68zX2pJ/sad.png" width="600"></img>
+<img src="https://i.ibb.co/z72qXS5/Screenshot-12.png" width="300"></img>
+<img src="https://i.ibb.co/Qd4k9mQ/Screenshot-13.png" width="300"></img>
+<img src="https://i.ibb.co/t3JkNkz/Screenshot-11.png" width="300"></img>
+
+
 
 Este  aplicativo foi projetado como um conceito que facili o desenvolvimento de componentes ricos e reutilizaveis para aplicativo web baseados nas redes sociais atuais com o principio de desenvolvimento rápido
 
